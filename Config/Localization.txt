@@ -1,0 +1,4 @@
+Key,File,Type,English
+
+ocbElectricityModernWindmill,blocks,block,Modern Windmill
+ocbElectricityModernWindmillDesc,blocks,block,"A modern windmill producing electricity by wind power. Will normally run around 50% max capacity, but wind is never predictable. Wind is only simulated and not wired to biome weather yet."

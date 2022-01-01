@@ -1,0 +1,61 @@
+<configs>
+
+	<append xpath="/blocks">
+
+		<block name="ocbElectricityModernWindmill">
+
+			<property name="UnlockedBy" value="perkAdvancedEngineering"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Tags" value="door"/>
+			<property name="Class" value="SolarPanel"/>
+			<!-- <property name="CustomIconTint" value="C68C53"/> -->
+			<property name="CustomIcon" value="ui_game_symbol_windmill" />
+			<property name="Material" value="Msteel"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/Windmill.unity3d?WindmillPrefab" />
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="LPHardnessScale" value="8"/>
+			<property name="Group" value="Basics,Building,advBuilding"/>
+			<property name="DescriptionKey" value="ocbElectricityModernWindmillDesc"/>
+			<property name="EconomicValue" value="300"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="FilterTags" value="floot"/>
+			<property name="DisplayType" value="blockHardened"/>
+
+			<property name="MultiBlockDim" value="3,7,3"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+
+			<property name="SlotItem" value="smallEngine"/>
+			<property name="OutputPerStack" value="80"/>
+			<property name="MaxPower" value="480"/>
+
+			<property name="IsWindmill" value="true"/>
+
+			<!-- <property name="WireOffset" value="0,0,0"/> -->
+
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="12"/>
+				<property name="resourceMechanicalParts" value="12"/>
+				<property name="resourceElectricParts" value="6"/>
+				<property name="resourceForgedSteel" value="20"/>
+			</property>
+
+			<drop event="Destroy" name="resourceForgedSteel" count="6,18"/>
+			<drop event="Destroy" name="resourceScrapPolymers" count="3,9" tag="salvageHarvest"/>
+			<drop event="Destroy" name="resourceElectricParts" count="3,6" tag="salvageHarvest"/>
+			<drop event="Destroy" name="resourceMechanicalParts" count="3,12" tag="salvageHarvest"/>
+
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+
+			<property name="CanPickup" value="true" />
+			<property name="TakeDelay" value="30"/>
+			
+		</block>
+
+	</append>
+
+</configs>

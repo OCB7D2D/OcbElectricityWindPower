@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="ElectricityWindPower" />
+		<Description value="Modern windmill generating electricity by wind power." />
+		<Website value="https://github.com/OCB7D2D/ElectricityWindPower" />
+		<Author value="ocbMaurice" />
+		<Version value="0.1.0" compat="A20"/>
+	</ModInfo>
+</xml>
