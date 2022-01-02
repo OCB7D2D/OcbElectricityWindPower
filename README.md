@@ -25,15 +25,104 @@ edge cases your biome weather is extremely windy but the windmills are
 running very slowly. At least we also simulate a generic wind direction,
 which is IMO something the original game hasn't yet included.
 
-## ToDo
+## Create custom windmill models
 
-- Describe how other models can be added
-- Better integrate in electricity overhaul mod
+For the first release I really just re-used an existing model for Xyth.
+It may not be the most beautiful and detailed model, but worked nicely
+to get the basics up and running. Now it would be cool to see some other
+windmill models, like from old farms etc. This mod should have everything
+one needs to create news model and export it as a unity3d resource.
+
+You should already be familiar how to export unity3d resources, otherwise
+you will need to get familiar with this step first (ToDo: link docs etc.).
+
+### Custom windmill script
+
+In order to animate the windmill, we use a custom unity script. This
+encapsulates the behavior for the animation nicely from the rest of
+the code. You can simply import the script in unity and then assign
+it to your model and configure the necessary items there.
+
+#### Importing the custom script
+
+You find the plugin stub under `UnityPlugins/ElectricityWindPower.dll`
+in this repo. This is only a stub for unity and doesn't contain any of
+the behavior (so you will not see anything if you click play in the
+unity editor). Don't worry, as the actual behavior will be loaded from
+the main plugin dll `ElectricityWindPower.dll` when the game is loading.
+
+- Create a folder in unity assets named `Plugins` (name must exactly
+  match, as unity will treat it as a [special folder][2] due to its name).
+- Drag and Drop the `UnityPlugins/ElectricityWindPower.dll` into it
+
+![Imported Plugin](Screens/unity-imported-plugin.png)
+
+#### Windmill prefab structure
+
+The prefab you need to create has only a few requirements and even those
+are just recommendations. It can have two joints that we rotate around.
+You probably want to nest these two so the rotations are added. In my
+example I rotate the `housing` into the wind, and the `rotor` rotates
+according to the wind speed.
+
+![Prefab Structure](Screens/unity-prefab-tree.png)
+
+#### Configure the windmill script
+
+It doesn't really matter to which node you attach the windmill script,
+but I suggest to keep it close to the root (the code will actually look
+into all children to find a reference during runtime).
+
+![Script configuration](Screens/unity-script-properties.png)
+
+- Housing: Choose which object to rotate into the wind
+- Housing Axis: Actual rotation vector that is applied to it
+- Rotor: Choose which object to rotate according to wind speed
+- Rotor Axis: Actual rotation vector that is applied to it
+- Audio Loop: A audio source that is playing when enabled
+- Audio Swoosh: A audio source representing a single "swoosh"
+- Swoosh Offset: Degrees after which the audio is played
+- Swoosh Interval: How many degrees to wait until next swoosh
+- Swoosh Delay: Time offset to delay the playing of the audio
+- Swoosh Pitch: Pitch dampening factor (keep or tinker with it)
+
+#### Additional unity properties
+
+Make sure to add colliders and tags where needed. For completeness
+I've included screenshots for all unity object properties:
+
+- [unity-props-01-root](Screens/unity-props-01-root.png)
+- [unity-props-02-model](Screens/unity-props-02-model.png)
+- [unity-props-03-motor](Screens/unity-props-03-motor.png)
+- [unity-props-04-housing](Screens/unity-props-04-housing.png)
+- [unity-props-05-rotor](Screens/unity-props-05-rotor.png)
+- [unity-props-06-pole](Screens/unity-props-06-pole.png)
+
+#### Tip: Applying prefab changes
+
+If you change something on an existing prefab, you need to update
+that prefab first, before you can export it again. You can do that
+by clicking on the inspector for the prefab to `Override` stuff:
+
+![Apply prefab changes](Screens/unity-prefab-apply-changes.png)
+
+### Create new block
+
+If you're not familiar how to create new blocks, please make yourself
+familiar with that topic first. It boils down to something like:
+
+```xml
+<block name="MyNewWindMill">
+  <property name="Extends" value="ocbElectricityModernWindmill"/>
+  <property name="Model" value="#@modfolder:Resources/MyWindMill.unity3d?MyPrefab" />
+</block>
+```
 
 ## Changelog
 
 ### Version 0.1.1
 
+- Change script to make rotation axes configurable
 - Change script to take in audio from unity plugin option
 
 ### Version 0.1.0
@@ -45,3 +134,4 @@ which is IMO something the original game hasn't yet included.
 I've developed and tested this Mod against version a20.b238
 
 [1]: https://github.com/OCB7D2D/ElectricityOverhaul
+[2]: https://docs.unity3d.com/2017.2/Documentation/Manual/SpecialFolders.html
