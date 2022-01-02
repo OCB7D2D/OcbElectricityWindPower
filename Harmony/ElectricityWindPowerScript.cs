@@ -5,8 +5,14 @@
 public class ElectricityWindPowerScript : MonoBehaviour
 {
 
-    public Transform rotor;
+    // Housing to rotate into the wind
     public Transform housing;
+    // The "axis" to animate transform rotation
+    public Vector3 housingAxis = new Vector3(0, 1, 0);
+    // The rotor to rotate with wind speed
+    public Transform rotor;
+    // The "axis" to animate transform rotation
+    public Vector3 rotorAxis = new Vector3(0, 0, 1);
 
     // Wind seed coordinates
     public int SeedX = 0;
@@ -112,7 +118,7 @@ public class ElectricityWindPowerScript : MonoBehaviour
             RotorSpeed = Mathf.Min(RotorSpeed, WindSpeed);
         }
         // Finally rotate the rotor by given speed
-        rotor.Rotate(0, 0, - RotorSpeed * Time.deltaTime);
+        rotor.Rotate(rotorAxis * - RotorSpeed * Time.deltaTime);
         // Pitch the audio source
         if (AudioSwoosh != null)
         {
@@ -157,7 +163,7 @@ public class ElectricityWindPowerScript : MonoBehaviour
             RotateSpeed = -MaxRotateSpeed;
         }
         // Finally rotate the housing by given speed
-        housing.Rotate(0, RotateSpeed * Time.deltaTime, 0);
+        housing.Rotate(housingAxis * RotateSpeed * Time.deltaTime);
         // housing.rotation = Quaternion.Euler(0, WindDirection, 0);
     }
 

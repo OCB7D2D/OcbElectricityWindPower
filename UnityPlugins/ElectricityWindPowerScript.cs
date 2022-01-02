@@ -3,8 +3,14 @@
 public class ElectricityWindPowerScript : MonoBehaviour
 {
 
+    // Housing to rotate into the wind
     public Transform housing;
+    // The "axis" to animate transform rotation
+    public Vector3 housingAxis = new Vector3(0, 1, 0);
+    // The rotor to rotate with wind speed
     public Transform rotor;
+    // The "axis" to animate transform rotation
+    public Vector3 rotorAxis = new Vector3(0, 0, 1);
 
     // Audio sample to play in loop
     public AudioSource AudioLoop;
