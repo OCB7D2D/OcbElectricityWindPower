@@ -12,6 +12,11 @@ public class ElectricityWindPowerScript : MonoBehaviour
     public int SeedX = 0;
     public int SeedZ = 0;
 
+    // Audio sample to play per "swoosh"
+    public AudioSource AudioSwoosh;
+    // Audio sample to play in loop
+    public AudioSource AudioLoop;
+
     // After which degrees to start the swoosh
     public float SwooshOffset = 60f;
     // Basically 360° divided by the blades
@@ -48,7 +53,6 @@ public class ElectricityWindPowerScript : MonoBehaviour
     public static readonly float WorldPerlinScale = 0.001f;
 
     // Variables used to play swooshes
-    private AudioSource audioSwoosh;
     private float audioAnglePlayed = 0;
 
     // Stop the windmill script
@@ -71,21 +75,25 @@ public class ElectricityWindPowerScript : MonoBehaviour
     {
         // Only enable script on clients
         enabled = !GameManager.IsDedicatedServer;
-        // Try to find the audio sample for the swoosh
-        audioSwoosh = gameObject.transform.GetComponentInChildren<AudioSource>();
     }
 
     // Called after awake only if enabled
     void OnEnable()
     {
-        // Audio.Manager.AddPlayingAudioSource(audioSwoosh);
-        // audioSwoosh.Play();
+        if (AudioLoop != null)
+        {
+            Audio.Manager.AddPlayingAudioSource(AudioLoop);
+            AudioLoop.Play();
+        }
     }
 
     void OnDisable()
     {
-        // Audio.Manager.RemovePlayingAudioSource(audioSwoosh);
-        // audioSwoosh.Stop();
+        if (AudioLoop != null)
+        {
+            Audio.Manager.RemovePlayingAudioSource(AudioLoop);
+            AudioLoop.Stop();
+        }
     }
 
     void UpdateRotorSpeed()
@@ -106,19 +114,19 @@ public class ElectricityWindPowerScript : MonoBehaviour
         // Finally rotate the rotor by given speed
         rotor.Rotate(0, 0, - RotorSpeed * Time.deltaTime);
         // Pitch the audio source
-        if (audioSwoosh != null)
+        if (AudioSwoosh != null)
         {
             audioAnglePlayed += RotorSpeed * Time.deltaTime;
             // Swoosh offset
             if (audioAnglePlayed > SwooshOffset)
             {
                 audioAnglePlayed -= SwooshInterval;
-                audioSwoosh.PlayDelayed(SwooshDelay);
+                AudioSwoosh.PlayDelayed(SwooshDelay);
             }
             // Pitch swoosh audio for faster rotor speed
-            audioSwoosh.pitch = RotorSpeed / SwooshPitch;
+            AudioSwoosh.pitch = RotorSpeed / SwooshPitch;
             // Fade volume in when rotor is accelerating
-            audioSwoosh.volume = Mathf.Min(1f, audioSwoosh.pitch);
+            AudioSwoosh.volume = Mathf.Min(1f, AudioSwoosh.pitch);
         }
     }
 

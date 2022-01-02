@@ -6,6 +6,12 @@ public class ElectricityWindPowerScript : MonoBehaviour
     public Transform housing;
     public Transform rotor;
 
+    // Audio sample to play in loop
+    public AudioSource AudioLoop;
+
+    // Audio sample to play per "swoosh"
+    public AudioSource AudioSwoosh;
+
     // After which degrees to start the swoosh
     public float SwooshOffset = 60f;
     // Basically 360° divided by the blades

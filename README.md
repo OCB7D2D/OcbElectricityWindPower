@@ -30,6 +30,16 @@ which is IMO something the original game hasn't yet included.
 - Describe how other models can be added
 - Better integrate in electricity overhaul mod
 
+## Changelog
+
+### Version 0.1.1
+
+- Change script to take in audio from unity plugin option
+
+### Version 0.1.0
+
+- Initial working version
+
 ## Compatibility
 
 I've developed and tested this Mod against version a20.b238
