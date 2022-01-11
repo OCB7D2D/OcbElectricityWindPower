@@ -27,6 +27,7 @@ public class ElectricityWindPowerScript : MonoBehaviour
     // Factor to scale swoosh pitch
     // Relative to current RotorSpeed
     public float SwooshPitch = 50f;
+    public float LoopPitch = 50f;
 
     void Awake()
     {

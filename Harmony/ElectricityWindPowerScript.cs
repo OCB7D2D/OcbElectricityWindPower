@@ -32,7 +32,8 @@ public class ElectricityWindPowerScript : MonoBehaviour
     // Factor to scale swoosh pitch
     // Relative to current RotorSpeed
     public float SwooshPitch = 50f;
-
+    public float LoopPitch = 50f;
+    
     // Set to true when stopping
     private bool Stopped = false;
 
@@ -133,6 +134,13 @@ public class ElectricityWindPowerScript : MonoBehaviour
             AudioSwoosh.pitch = RotorSpeed / SwooshPitch;
             // Fade volume in when rotor is accelerating
             AudioSwoosh.volume = Mathf.Min(1f, AudioSwoosh.pitch);
+        }
+        if (AudioLoop != null)
+        {
+            // Pitch swoosh audio for faster rotor speed
+            AudioLoop.pitch = RotorSpeed / LoopPitch;
+            // Fade volume in when rotor is accelerating
+            AudioLoop.volume = Mathf.Min(1f, AudioLoop.pitch);
         }
     }
 

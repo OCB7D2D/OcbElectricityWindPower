@@ -98,6 +98,20 @@ I've included screenshots for all unity object properties:
 - [unity-props-05-rotor](Screens/unity-props-05-rotor.png)
 - [unity-props-06-pole](Screens/unity-props-06-pole.png)
 
+#### Tip: Audio distance attenuation
+
+In order for audio to attenuate correctly in Unity and 7D2D you need
+to make sure that the audio source is correctly setup. Make sure to
+move the `Spatial Blend` option to be fully 3D. This is probably the
+most common mistake, since unity seems to default it to 2D, which
+disables any distance attenuation. You should also disable the
+`Play on Awake` option, since otherwise the audio is automatically
+played when the player tries to put the block into the world.
+Finally adjust the "Max Distance" to define how far the audio
+should be audible (unit here is roughly the same as blocks).
+
+![unity-props-07-audio](Screens/unity-props-07-audio.png)
+
 #### Tip: Applying prefab changes
 
 If you change something on an existing prefab, you need to update
@@ -119,6 +133,14 @@ familiar with that topic first. It boils down to something like:
 ```
 
 ## Changelog
+
+### Version 0.2.0
+
+- Add rustic windmill model (needs stators to produce power)
+- Power generation is set to be half of the modern windmill (120W Max)
+- New resource "small stator" scraps into brass and can be crafted at forges
+- Change loot/scrap to include "small stator" in various electric items
+- Add wind power schematic to unlock all new wind power items directly
 
 ### Version 0.1.1
 

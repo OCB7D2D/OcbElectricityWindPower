@@ -91,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\blocks.xml" />
+    <Content Include="Config\items.xml" />
+    <Content Include="Config\Localization.txt" />
+    <Content Include="Config\loot.xml" />
     <Content Include="Config\progression.xml" />
     <Content Include="Config\recipes.xml" />
   </ItemGroup>

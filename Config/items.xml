@@ -1,0 +1,40 @@
+<configs>
+
+	<append xpath="/items">
+
+		<item name="ocbElectricitySmallStator">
+			<property name="HoldType" value="45"/>
+			<property name="Tags" value="junk"/>
+			<property name="CustomIcon" value="ui_game_symbol_small_stator" />
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
+			<property name="Material" value="MsmallEngine"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="Material" value="MresourceScrapBrassMedium"/>
+			<property name="MeltTimePerUnit" value=".6"/>
+			<!-- stacking for items that go in slots doesn't work -->
+			<!-- otherwise full stacks are moved to the slots :-/ -->
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="80"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="Group" value="Resources"/>
+		</item>
+
+		<item name="windpowerSchematic">
+			<property name="Extends" value="schematicNoQualityMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ui_game_symbol_windmill_modern"/>
+			<property name="DescriptionKey" value="windpowerSchematicDesc"/>
+			<property name="Unlocks" value="ocbElectricityRusticWindmill"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ocbElectricityRusticWindmill" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ocbElectricityModernWindmill" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ocbElectricitySmallStator" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+
+	</append>
+
+</configs>

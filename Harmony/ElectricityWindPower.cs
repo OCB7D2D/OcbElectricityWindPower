@@ -129,7 +129,7 @@ public class ElectricityWindPower : IModApi
     }
 
 
-    // BELOW ARE ONLY CORE ELECTRICITY BUGFIXES, MOVE THESE TO OUR BUGFIXE REPO
+    // BELOW ARE ONLY CORE ELECTRICITY BUGFIXES, MOVE THESE TO OUR BUGFIXE REPO?
 
     [HarmonyPatch(typeof(ItemActionConnectPower))]
     [HarmonyPatch("OnHoldingUpdate")]
@@ -176,6 +176,7 @@ public class ElectricityWindPower : IModApi
         }
     }
 
+    // Let's hope that the way of calling methods this way doesn't have too much overhead!
     static readonly FieldInfo FieldIsPowered = AccessTools.Field(typeof(PowerItem), "isPowered");
     static readonly FieldInfo FieldHasChangesLocal = AccessTools.Field(typeof(PowerItem), "hasChangesLocal");
     static readonly MethodInfo MethodIsPoweredChanged = AccessTools.Method(typeof(PowerItem), "IsPoweredChanged");
