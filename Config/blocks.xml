@@ -24,40 +24,6 @@
 			<property name="Material" value="Mmetal"/>
 		</block>
 
-		<block name="ocbElectricityModernWindmill">
-
-			<property name="Shape" value="ModelEntity" />
-			<property name="CreativeMode" value="Player"/>
-			<property name="Extends" value="ocbElectricityWindmillBase"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_modern" />
-			<property name="Model" value="#@modfolder:Resources/Windmill.unity3d?WindmillPrefab" />
-			<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
-
-			<property name="Material" value="Msteel"/>
-			<property name="LPHardnessScale" value="8"/>
-			<property name="EconomicValue" value="300"/>
-
-			<property name="MultiBlockDim" value="3,7,3"/>
-			<property name="SlotItem" value="smallEngine"/>
-			<property name="OutputPerStack" value="80"/>
-			<property name="MaxPower" value="480"/>
-
-			<property class="RepairItems">
-				<property name="resourceScrapPolymers" value="12"/>
-				<property name="resourceMechanicalParts" value="12"/>
-				<property name="resourceElectricParts" value="6"/>
-				<property name="resourceForgedSteel" value="20"/>
-			</property>
-
-			<drop event="Destroy" name="resourceForgedSteel" count="6,18"/>
-			<drop event="Destroy" name="resourceScrapPolymers" count="3,9" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceElectricParts" count="3,6" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceMechanicalParts" count="3,12" tag="salvageHarvest"/>
-
-			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-
-		</block>
-
 		<block name="ocbElectricityRusticWindmill">
 
 			<property name="Shape" value="ModelEntity" />
@@ -65,7 +31,6 @@
 			<property name="Extends" value="ocbElectricityWindmillBase"/>
 			<property name="CustomIcon" value="ui_game_symbol_windmill_rustic" />
 			<property name="Model" value="#@modfolder:Resources/WesternWindmill.unity3d?WindmillWesternPrefab" />
-			<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
 
 			<property name="Material" value="Mwood"/>
 			<property name="LPHardnessScale" value="4"/>
@@ -73,28 +38,37 @@
 
 			<property name="MultiBlockDim" value="3,6,3"/>
 			<property name="SlotItem" value="ocbElectricitySmallStator"/>
-			<property name="OutputPerStack" value="40"/>
-			<property name="MaxPower" value="240"/>
+			<property name="Weight" value="1200"/>
 
-			<property class="RepairItems">
-				<property name="resourceMechanicalParts" value="3"/>
-				<property name="resourceElectricParts" value="3"/>
-				<property name="resourceScrapIron" value="20"/>
-				<property name="resourceWood" value="80"/>
-			</property>
+		</block>
 
-			<drop event="Destroy" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceElectricParts" count="1,3" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceScrapIron" count="5,10" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceWood" count="10,20" />
+		<block name="ocbElectricityModernWindmill">
 
-			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="CreativeMode" value="Player"/>
+			<property name="Extends" value="ocbElectricityWindmillBase"/>
+			<property name="CustomIcon" value="ui_game_symbol_windmill_modern" />
+			<property name="Model" value="#@modfolder:Resources/Windmill.unity3d?WindmillPrefab" />
+
+			<property name="Material" value="Msteel"/>
+			<property name="LPHardnessScale" value="8"/>
+			<property name="EconomicValue" value="300"/>
+
+			<property name="MultiBlockDim" value="3,7,3"/>
+			<property name="SlotItem" value="smallEngine"/>
+			<property name="Weight" value="2000"/>
 
 		</block>
 
 	</append>
 
+	<append xpath="/blocks/block[@name='cntCar03SedanDamage0Master']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
+	</append>
 	<append xpath="/blocks/block[@name='cntCar03SedanDamage1Master']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='cntCar03SedanDamage2Master']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='cntBusSchool']">
@@ -103,7 +77,19 @@
 	<append xpath="/blocks/block[@name='cntArmyTruckOpen']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.5" tag="salvageHarvest"/>
 	</append>
+	<append xpath="/blocks/block[@name='cntTiltTruckEmpty']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.5" tag="salvageHarvest"/>
+	</append>
 	<append xpath="/blocks/block[@name='cntTrashCompactor']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='cntWasherOpen']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='decoTreadmill']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='utilityTransformer']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='cntMicrowaveOvenVer1Open']">
@@ -118,5 +104,12 @@
 	<append xpath="/blocks/block[@name='cntFreezerMaster']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.1" tag="salvageHarvest"/>
 	</append>
+
+	<modif condition="UndeadLegacy_CoreModule">
+		<include path="blocks.ulm.xml"/>
+	</modif>
+	<modelse>
+		<include path="blocks.a20.xml"/>
+	</modelse>
 
 </configs>

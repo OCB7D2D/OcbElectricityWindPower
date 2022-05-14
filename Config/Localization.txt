@@ -2,6 +2,8 @@ Key,File,Type,English
 
 ocbElectricityModernWindmill,blocks,block,Modern Windmill
 ocbElectricityRusticWindmill,blocks,block,Rustic Windmill
+ocbElectricityModernWindmillBlueprint,items,item,Modern Windmill
+ocbElectricityRusticWindmillBlueprint,items,item,Rustic Windmill
 ocbElectricityWindmillDesc,blocks,block,"A windmill producing electricity by wind power. Will normally run around 50% max capacity, but wind is never predictable. Wind is only simulated and not wired to biome weather yet."
 ocbElectricitySmallStator,items,item,Small Stator
 ocbElectricitySmallStatorDesc,items,item,"Can be scrapped into brass but is also required in windmills to produce power. Can be crafted in forges."

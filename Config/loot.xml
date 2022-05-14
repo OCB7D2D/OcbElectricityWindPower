@@ -1,11 +1,21 @@
-<configs>
+<configs patcher-version="1">
 
-	<append xpath="/lootcontainers/lootgroup[@name='groupScrapRare']">
-		<item name="ocbElectricitySmallStator" count="1,2"/>
-	</append>
-
-	<append xpath="/lootcontainers/lootgroup[@name='schematicsElectrical']">
-		<item name="windpowerSchematic"/>
-	</append>
+	<modif condition="UndeadLegacy_CoreModule">
+		<append xpath="/lootcontainers/lootgroup[@name='groupJunkCopper']">
+			<item name="ocbElectricitySmallStator" count="1,2" loot_prob_template="veryLow"/>
+		</append>
+		<append xpath="/lootcontainers/lootgroup[@name='booksElectrical']">
+			<item name="ocbElectricityRusticWindmillBlueprint" loot_prob_template="med"/>
+			<item name="ocbElectricityModernWindmillBlueprint" loot_prob_template="low"/>
+		</append>
+	</modif>
+	<modelse>
+		<append xpath="/lootcontainers/lootgroup[@name='groupScrapRare']">
+			<item name="ocbElectricitySmallStator" count="1,2"/>
+		</append>
+		<append xpath="/lootcontainers/lootgroup[@name='schematicsElectrical']">
+			<item name="windpowerSchematic"/>
+		</append>
+	</modelse>
 
 </configs>

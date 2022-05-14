@@ -1,0 +1,79 @@
+<configs>
+
+	<append xpath="/recipes">
+
+		<recipe name="ocbElectricityRusticWindmillBlueprint" time="60" area="ulmStationResearch_1">
+			<ingredient name="ocbElectricitySmallStator" count="4"/>
+			<ingredient name="resourceMechanicalParts" count="4"/>
+			<ingredient name="resourceElectricParts" count="2"/>
+			<ingredient name="ulmResourceScrapWires" count="2"/>
+			<ingredient name="ulmResourceNutsAndBolts" count="8"/>
+			<ingredient name="ulmResourcePlank" count="20"/>
+			<ingredient name="ulmResourceResearch" count="100"/>
+			<ingredient name="resourcePaper" count="10"/>
+		</recipe>
+
+		<recipe name="ocbElectricityRusticWindmill" time="30"
+				tags="learnable" area="ulmStationWorkbench_1">
+
+			<ingredient name="resourceMechanicalParts" count="6"/>
+			<ingredient name="resourceElectricParts" count="3"/>
+			<ingredient name="ulmResourceScrapWires" count="3"/>
+			<ingredient name="ulmResourceNutsAndBolts" count="12"/>
+			<ingredient name="ulmResourcePlank" count="20"/>
+			<ingredient name="ulmResourceElectronicCircuitboard"/>
+			<ingredient name="ulmResourceElectronicFuse"/>
+			<ingredient name="ulmResourceElectronicSwitch"/>
+
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add"
+					value=".5,.5,.5,.3,.15" tags="resourceMechanicalParts,resourceElectricParts,ulmResourceScrapWires,ulmResourceNutsAndBolts,resourceScrapIron,ulmResourceScrapPlank"/>
+			</effect_group>
+
+		</recipe>
+
+		<recipe name="ocbElectricityModernWindmillBlueprint" time="90" area="ulmStationResearch_2">
+			<ingredient name="ulmResourceEngineV4" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="9"/>
+			<ingredient name="resourceMechanicalParts" count="9"/>
+			<ingredient name="resourceElectricParts" count="6"/>
+			<ingredient name="ulmResourceScrapWires" count="9"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<ingredient name="ulmResourceResearch" count="300"/>
+			<ingredient name="resourcePaper" count="10"/>
+		</recipe>
+
+		<recipe name="ocbElectricityModernWindmill" time="45"
+				tags="learnable" area="ulmStationWorkbench_3">
+
+			<ingredient name="resourceMilitaryFiber" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="12"/>
+			<ingredient name="ulmResourceScrapWires" count="12"/>
+			<ingredient name="resourceMechanicalParts" count="12"/>
+			<ingredient name="resourceElectricParts" count="9"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="ulmResourceElectronicCircuitboard" count="4"/>
+			<ingredient name="ulmResourceElectronicFuse" count="2"/>
+			<ingredient name="ulmResourceElectronicSwitch"/>
+
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add"
+					value=".5,.5,.5,.3,.15" tags="resourceMilitaryFiber,resourceScrapPolymers,ulmResourceScrapWires,resourceMechanicalParts,resourceElectricParts,resourceForgedSteel,ulmResourceElectronicCircuitboard"/>
+			</effect_group>
+
+		</recipe>
+
+		<recipe name="ocbElectricitySmallStator" time="15" area="ulmStationForge_2">
+			<ingredient name="ulmResourceIngotIron" count="4"/>
+			<ingredient name="ulmResourceScrapWires" count="12"/>
+		</recipe>
+
+		<repair group="MG_Stator">
+			<entry area="ulmStationMaintenance_1">
+				<ingredient name="ulmResourceScrapWires" count="3"/>
+			</entry>
+		</repair>
+
+	</append>
+
+</configs>

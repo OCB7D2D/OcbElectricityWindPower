@@ -1,0 +1,102 @@
+<configs>
+
+	<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
+
+		<property name="UnlockedBy" value="ocbElectricityRusticWindmillBlueprint"/>
+
+		<property name="CarryWeight" value="20"/>
+
+		<property name="OutputPerStack" value="30"/>
+		<property name="MaxPower" value="180"/>
+
+		<property class="RepairItems">
+			<property name="resourceMechanicalParts" value="3"/>
+			<property name="resourceElectricParts" value="3"/>
+			<property name="resourceScrapIron" value="10"/>
+			<property name="ulmResourcePlank" value="10"/>
+		</property>
+
+		<drop event="Harvest" name="air" count="0" tool_category="Disassemble"/>
+
+		<drop event="Harvest" name="ulmResourceScrapSteel" count="10,20" tag="allHarvest"/>
+		<drop event="Harvest" name="ulmResourceScrapSteel" count="10,20" tag="salvageHarvest"/>
+		<drop event="Harvest" name="resourceElectricParts" count="1,2" tag="salvage0,salvageHarvest"/>
+		<drop event="Harvest" name="resourceScrapIron" count="4,8" tag="salvage0,salvageHarvest"/>
+		<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvage1,salvageHarvest"/>
+
+		<drop event="Destroy" count="0"/>
+
+		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+
+	</append>
+
+	<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
+
+		<property name="UnlockedBy" value="ocbElectricityModernWindmillBlueprint"/>
+
+		<property name="CarryWeight" value="35"/>
+
+		<property name="OutputPerStack" value="30"/>
+		<property name="MaxPower" value="500"/>
+
+		<property class="RepairItems">
+			<property name="resourceElectricParts" value="4"/>
+			<property name="resourceMechanicalParts" value="8"/>
+			<property name="resourceScrapPolymers" value="8"/>
+			<property name="resourceForgedSteel" value="20"/>
+		</property>
+
+		<drop event="Harvest" name="air" count="0" tool_category="Disassemble"/>
+
+		<drop event="Harvest" name="ulmResourceScrapSteel" count="30,60" tag="allHarvest"/>
+		<drop event="Harvest" name="ulmResourceScrapSteel" count="30,60" tag="salvageHarvest"/>
+		<drop event="Harvest" name="resourceElectricParts" count="2,4" tag="salvage0,salvageHarvest"/>
+		<drop event="Harvest" name="resourceMechanicalParts" count="3,6" tag="salvage1,salvageHarvest"/>
+		<drop event="Harvest" name="resourceScrapPolymers" count="2,8" tag="salvage2,salvageHarvest"/>
+
+		<drop event="Destroy" count="0"/>
+
+		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	
+	</append>
+
+	<append xpath="/blocks/block[@name='ulmContainerCarDamageMaster0']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.25" tag="salvage1,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmContainerCarDamageMaster1']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.25" tag="salvage1,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmContainerCarDamageMaster2']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.25" tag="salvage1,salvageHarvest"/>
+	</append>
+
+	<append xpath="/blocks/block[@name='ulmVehicleVariantMaster']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.15" tag="salvage0,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehicleBicycleAVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.025" tag="salvage1,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehicleMinibikeAVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.075" tag="salvage1,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehicleMotorcycleAVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.1" tag="salvage1,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehicleMotorcycle2AVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.1" tag="salvage1,salvageHarvest"/>
+	</append>
+
+	<append xpath="/blocks/block[@name='ulmVehicleMilitaryTruckVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.4" tag="salvage0,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmContainerBusSchool']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.6" tag="salvage0,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehicleAmbulance1VariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1,2" prob="0.4" tag="salvage0,salvageHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='ulmVehiclePoliceCruiserVariantHelper']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.5" tag="salvage0,salvageHarvest"/>
+	</append>
+
+</configs>

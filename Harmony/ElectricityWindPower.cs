@@ -33,6 +33,11 @@ public class ElectricityWindPower : IModApi
         }
     }
 
+    // Check for optional field (Electricity Overhaul defines and uses this)
+    static readonly FieldInfo FieldLightLevel = AccessTools
+        .TypeByName(nameof(PowerSolarPanel))?.GetFields()?
+            .First(field => field.Name == "LightLevel");
+
     [HarmonyPatch(typeof(PowerSolarPanel))]
     [HarmonyPatch("CheckLightLevel")]
     public class PowerSolarPanel_CheckLightLevel
@@ -68,6 +73,13 @@ public class ElectricityWindPower : IModApi
                 __instance.Position.z * WorldPerlinScale,
                 __instance.Position.x * WorldPerlinScale
                 + world.worldTime * PerlinSpeedFactor);
+
+            // Update optional field (electricity overhaul)
+            if (FieldLightLevel != null)
+            {
+                FieldLightLevel.SetValue(__instance,
+                    (ushort)(speed * ushort.MaxValue));
+            }
 
             // Calculate max output power for the current wind situation
             // Current power always matches for solar sources

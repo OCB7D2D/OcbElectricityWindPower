@@ -134,6 +134,10 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.3.0
+
+- Add Undead Legacy compatibility patches
+
 ### Version 0.2.0
 
 - Add rustic windmill model (needs stators to produce power)
