@@ -5,6 +5,7 @@
 		<property name="UnlockedBy" value="ocbElectricityRusticWindmillBlueprint"/>
 
 		<property name="CarryWeight" value="20"/>
+		<property name="Stacknumber" value="5"/>
 
 		<property name="OutputPerStack" value="30"/>
 		<property name="MaxPower" value="180"/>
@@ -35,6 +36,7 @@
 		<property name="UnlockedBy" value="ocbElectricityModernWindmillBlueprint"/>
 
 		<property name="CarryWeight" value="35"/>
+		<property name="Stacknumber" value="5"/>
 
 		<property name="OutputPerStack" value="30"/>
 		<property name="MaxPower" value="500"/>

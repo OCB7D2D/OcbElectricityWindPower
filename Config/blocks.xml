@@ -34,7 +34,10 @@
 
 			<property name="Material" value="Mwood"/>
 			<property name="LPHardnessScale" value="4"/>
+			<property name="SellableToTrader" value="true"/>
+
 			<property name="EconomicValue" value="100"/>
+			<property name="EconomicBundleSize" value="1"/>
 
 			<property name="MultiBlockDim" value="3,6,3"/>
 			<property name="SlotItem" value="ocbElectricitySmallStator"/>
@@ -52,7 +55,10 @@
 
 			<property name="Material" value="Msteel"/>
 			<property name="LPHardnessScale" value="8"/>
+			<property name="SellableToTrader" value="true"/>
+
 			<property name="EconomicValue" value="300"/>
+			<property name="EconomicBundleSize" value="1"/>
 
 			<property name="MultiBlockDim" value="3,7,3"/>
 			<property name="SlotItem" value="smallEngine"/>
