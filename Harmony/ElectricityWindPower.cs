@@ -37,7 +37,7 @@ public class ElectricityWindPower : IModApi
     // Check for optional field (Electricity Overhaul defines and uses this)
     static readonly FieldInfo FieldLightLevel = AccessTools
         .TypeByName(nameof(PowerSolarPanel))?.GetFields()?
-            .First(field => field.Name == "LightLevel");
+        .FirstOrDefault(field => field.Name == "LightLevel");
 
     [HarmonyPatch(typeof(PowerSolarPanel))]
     [HarmonyPatch("CheckLightLevel")]

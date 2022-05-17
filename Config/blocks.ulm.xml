@@ -25,6 +25,10 @@
 		<drop event="Harvest" name="resourceScrapIron" count="4,8" tag="salvage0,salvageHarvest"/>
 		<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvage1,salvageHarvest"/>
 
+		<drop event="Harvest" name="ulmResourceElectronicFuse" prop="0.15" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ulmResourceElectronicSwitch" prop="0.15" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ulmResourceElectronicCircuitboard" prop="0.05" tag="salvageHarvest"/>
+
 		<drop event="Destroy" count="0"/>
 
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -55,6 +59,10 @@
 		<drop event="Harvest" name="resourceElectricParts" count="2,4" tag="salvage0,salvageHarvest"/>
 		<drop event="Harvest" name="resourceMechanicalParts" count="3,6" tag="salvage1,salvageHarvest"/>
 		<drop event="Harvest" name="resourceScrapPolymers" count="2,8" tag="salvage2,salvageHarvest"/>
+
+		<drop event="Harvest" name="ulmResourceElectronicFuse" prop="0.3" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ulmResourceElectronicSwitch" prop="0.3" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ulmResourceElectronicCircuitboard" prop="0.2" tag="salvageHarvest"/>
 
 		<drop event="Destroy" count="0"/>
 

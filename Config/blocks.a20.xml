@@ -4,6 +4,8 @@
 
 		<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
 
+		<property name="Stacknumber" value="4"/>
+
 		<property class="RepairItems">
 			<property name="resourceMechanicalParts" value="3"/>
 			<property name="resourceElectricParts" value="3"/>
@@ -23,6 +25,8 @@
 	<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
 
 		<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
+
+		<property name="Stacknumber" value="2"/>
 
 		<property class="RepairItems">
 			<property name="resourceScrapPolymers" value="12"/>

@@ -88,6 +88,7 @@
     <Compile Include="Harmony\ElectricityWindPower.cs" />
     <Compile Include="Harmony\AssemblyInfo.cs" />
     <Compile Include="Harmony\ElectricityWindPowerScript.cs" />
+    <Compile Include="Harmony\ModXmlPatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\blocks.a20.xml" />
