@@ -1,11 +1,10 @@
-Key,File,Type,English
-
-ocbElectricityModernWindmill,blocks,block,Modern Windmill
-ocbElectricityRusticWindmill,blocks,block,Rustic Windmill
-ocbElectricityModernWindmillBlueprint,items,item,Modern Windmill
-ocbElectricityRusticWindmillBlueprint,items,item,Rustic Windmill
-ocbElectricityWindmillDesc,blocks,block,"A windmill producing electricity by wind power. Will normally run around 50% max capacity, but wind is never predictable. Wind is only simulated and not wired to biome weather yet."
-ocbElectricitySmallStator,items,item,Small Stator
-ocbElectricitySmallStatorDesc,items,item,"Can be scrapped into brass but is also required in windmills to produce power. Can be crafted in forges."
-windpowerSchematic,blocks,Electricity,Basics of Wind Power Schematic
-windpowerSchematicDesc,blocks,Electricity,"Learn to craft windmill generators and stators by reading this schematic."
+Key,File,Type,English,German
+ocbElectricityModernWindmill,blocks,block,Modern Windmill,Windenergieanlage
+ocbElectricityRusticWindmill,blocks,block,Rustic Windmill,Rustikales Windrad
+ocbElectricityModernWindmillBlueprint,items,item,Modern Windmill,Windenergieanlage
+ocbElectricityRusticWindmillBlueprint,items,item,Rustic Windmill,Rustikales Windrad
+ocbElectricityWindmillDesc,blocks,block,"A windmill producing electricity by wind power. Will normally run around 50% max capacity, but wind is never predictable. Wind is only simulated and not wired to biome weather yet.","Strom produzierendes Windrad. Läuft normalerweise auf ca. 50% der maximalen Kapazität. Wind ist nur simuliert und ist momentan leider noch nicht mit dem Biom-Wetter verknüpft."
+ocbElectricitySmallStator,items,item,Small Stator,Generatorstator
+ocbElectricitySmallStatorDesc,items,item,"Can be scrapped for useful resources, but is also required in small windmills to produce power. Can be crafted in forges.","Kann zerlegt werden für Resources, wird aber auch in kleinen Windrädern gebraucht für die Stromproduktion."
+windpowerSchematic,blocks,Electricity,Basics of Wind Power Schematic,Bauplan – Grundlagen der Windkraft
+windpowerSchematicDesc,blocks,Electricity,"Learn to craft windmill generators and stators by reading this schematic.","Lerne durch das Lesen dieser Baupläne, wie man Windräder und Windenergieanlage sowie die benötigten Komponenten baut."

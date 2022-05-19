@@ -136,7 +136,9 @@ familiar with that topic first. It boils down to something like:
 
 ### Version 0.3.0
 
-- Add Undead Legacy compatibility patches
+- Introducing compatibility for Undead Legacy (experimental)  
+  Rename this mod to e.g `ZElectricityWindPower` to load after UL
+- Add German translations
 
 ### Version 0.2.0
 
