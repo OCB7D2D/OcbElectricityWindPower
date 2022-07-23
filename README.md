@@ -134,6 +134,10 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.3.1
+
+- Introducing compatibility for Darkness Falls (experimental)
+
 ### Version 0.3.0
 
 - Introducing compatibility for Undead Legacy (experimental)  

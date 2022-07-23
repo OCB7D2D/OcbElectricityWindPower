@@ -1,0 +1,38 @@
+<configs patcher-version="1">
+
+
+	<!-- Vanilla way to get it via advanced engineering, which is in the laborer class -->
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='5']/@tags">,solarCell</append>
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='4,5']/@tags">,ocbElectricityModernWindmill</append>
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='3,5']/@tags">,ocbElectricitySmallStator</append>
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='2,5']/@tags">,ocbElectricityRusticWindmill</append>
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='1,5']/@tags">,solarbank</append>
+
+	<insertAfter xpath="/progression/perks/perk[@name='perkElectricBasics']">
+
+		<perk name="perkRenewableEnergy" parent="skillPerks" name_key="perkRenewableEnergyName" desc_key="perkRenewableEnergyDesc" base_skill_point_cost="1" min_level="0" max_level="3" icon="ui_game_symbol_electric_solar">
+
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkCraftScience" operation="GTE" value="1" desc_key="reqScience1"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkCraftScience" operation="GTE" value="3" desc_key="reqScience3"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkCraftScience" operation="GTE" value="5" desc_key="reqScience5"/></level_requirements>
+
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,3" tags="ocbElectricityRusticWindmill,solarbank"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,3" tags="ocbElectricityModernWindmill,ocbElectricitySmallStator"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3" tags="solarCell"/>
+				<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onPerkLevelChanged" action="AddJournalEntry" journal="renewableEnergyTipDF"/>
+				<effect_description level="1" desc_key="perkRenewableEnergyRank1Title" long_desc_key="perkRenewableEnergyRank1Desc"/>
+				<effect_description level="2" desc_key="perkRenewableEnergyRank2Title" long_desc_key="perkRenewableEnergyRank2Desc"/>
+				<effect_description level="3" desc_key="perkRenewableEnergyRank3Title" long_desc_key="perkRenewableEnergyRank3Desc"/>
+			</effect_group>
+
+		</perk>
+
+	</insertAfter>
+
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group">
+		<triggered_effect trigger="onPerkLevelChanged" action="AddJournalEntry" journal="renewableEnergyTipDF"/>
+	</append>
+
+</configs>

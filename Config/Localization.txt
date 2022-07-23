@@ -8,3 +8,16 @@ ocbElectricitySmallStator,items,item,Small Stator,Generatorstator
 ocbElectricitySmallStatorDesc,items,item,"Can be scrapped for useful resources, but is also required in small windmills to produce power. Can be crafted in forges.","Kann zerlegt werden für Resources, wird aber auch in kleinen Windrädern gebraucht für die Stromproduktion."
 windpowerSchematic,blocks,Electricity,Basics of Wind Power Schematic,Bauplan – Grundlagen der Windkraft
 windpowerSchematicDesc,blocks,Electricity,"Learn to craft windmill generators and stators by reading this schematic.","Lerne durch das Lesen dieser Baupläne, wie man Windräder und Windenergieanlage sowie die benötigten Komponenten baut."
+perkRenewableEnergyName,Dialog,Dialog,Renewable energy,Erneuerbare Energien
+perkRenewableEnergyRank1Title,Dialog,Dialog,Renewable energy 1,Erneuerbare Energien 1
+perkRenewableEnergyRank2Title,Dialog,Dialog,Renewable energy 2,Erneuerbare Energien 2
+perkRenewableEnergyRank3Title,Dialog,Dialog,Renewable energy 2,Erneuerbare Energien 3
+perkRenewableEnergyDesc,Dialog,Dialog,Learn how to craft wind mills and solar banks plus related accessories.,Lerne Windkraft- und Photovoltaik-Anlagen zu bauen (inkl. Zubehör).
+perkRenewableEnergyRank1Desc,Dialog,Dialog,Unlocks rustic windmill and solar bank recipes.  [DECEA3]Level Requirements[-] Science Crafting 2
+perkRenewableEnergyRank2Desc,Dialog,Dialog,Unlocks modern windmill and small stator recipes.  [DECEA3]Level Requirements[-] Science Crafting 3
+perkRenewableEnergyRank3Desc,Dialog,Dialog,Unlocks the solar cell recipe.  [DECEA3]Level Requirements[-] Science Crafting 4
+response_renewables_1,Dialog,Dialog,Renewable Energy 1 (500 Dukes),Erneuerbare Energien 1 (500 Dukes)
+response_renewables_2,Dialog,Dialog,Renewable Energy 2 (1000 Dukes),Erneuerbare Energien 2 (1000 Dukes)
+response_renewables_3,Dialog,Dialog,Renewable Energy 3 (2000 Dukes),Erneuerbare Energien 3 (2000 Dukes)
+renewableEnergyTipDF,,Journal Tip,"Thanks you for choosing OCB Wind Power Mod (Darkness Falls Edition). Two Windmill, a wooden rustic one and a modern version.\n\nThese act like solar banks in that they can connect to battery banks, unless you are using my electricity overhaul mod, that allows to daisy chain power sources.\n\nDF edition also includes recipes for solar banks and cells, since otherwise solar would be way too expensive in regard to wind.\n\nYou can unlock renewable energies either by finding and reading the wind power schematic, or by investing points into the renewable energy perk. You can also buy these recipes with trader Bob if you have a good enough reputation with him.\n\nWind speed isn't linked to biome weather and uses perlin noise to determine how fast and in what direction wind is blowing. Production will average around 50%, but can vary drastically. You better not use windmills to power consumers directly. Use battery banks to avoid outtakes during calm periods.\n\nAdvanced Engineering Perk for the laborer class unlocks the following recipes: 1) Solar Bank 2) Rustic Windmill 3) Small Stators 4) Modern Windmill 5) Solar Cells.","Danke das sie sich für OCB Wind Power Mod entschieden haben."
+renewableEnergyTipDF_title,,Journal Tip,Renewable Energy,Erneuerbare Energien

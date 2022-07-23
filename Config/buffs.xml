@@ -1,0 +1,7 @@
+<configs patcher-version="1">
+
+	<modif condition="Darkness Falls Core">
+		<include path="buffs.df.xml"/>
+	</modif>
+
+</configs>

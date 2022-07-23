@@ -3,6 +3,9 @@
 	<modif condition="UndeadLegacy_CoreModule">
 		<!-- unlocks items via schematics only -->
 	</modif>
+	<modelsif condition="Darkness Falls Core">
+		<include path="progression.df.xml"/>
+	</modelsif>
 	<modelse>
 		<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='3,5']/@tags">,ocbElectricityModernWindmill</append>
 		<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='2,5']/@tags">,ocbElectricityRusticWindmill,ocbElectricitySmallStator</append>
