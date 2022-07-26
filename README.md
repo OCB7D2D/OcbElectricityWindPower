@@ -134,6 +134,10 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.3.1
+
+- Add automated translations for 28 languages via DeepL
+
 ### Version 0.3.0
 
 - Introducing compatibility for Undead Legacy (experimental)  
