@@ -136,8 +136,8 @@ familiar with that topic first. It boils down to something like:
 
 ### Version 0.3.1
 
-- Introducing compatibility for Darkness Falls (experimental)
-- Improving repairability in UL (only in maintenance station)
+- [DF] Introducing compatibility for Darkness Falls (experimental)
+- [UL] Improving repairability in UL (only in maintenance station)
 - Add automated translations for 27 languages via DeepL
 
 ### Version 0.3.0
