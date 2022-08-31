@@ -13,6 +13,7 @@
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="Material" value="matCopper"/>
 			<property name="MeltTimePerUnit" value=".6"/>
+
 			<!-- stacking for items that go in slots doesn't work -->
 			<!-- otherwise full stacks are moved to the slots :-/ -->
 			<property name="Stacknumber" value="1"/>
@@ -25,7 +26,10 @@
 			<property name="DisplayType" value="ulmEngine"/>
 			<property name="Tags" value="powerSourceEngine"/>
 			<property name="CarryWeight" value="2"/>
-			<property name="MaintenanceGroup" value="MG_Stator"/>
+
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="MaintenanceGroup" value="MG_CompactEngine"/>
+			<!-- <property name="MaintenanceGroup" value="MG_Stator"/> -->
 
 			<effect_group tiered="false">
 				<passive_effect operation="base_set" name="ModSlots" value="0"/>
@@ -59,31 +63,9 @@
 
 	</append>
 
-	<append xpath="/items/item[@name='resourceCloth']">
-		<property name="RepairAmount" value="100"/>
-		<property name="RepairTime" value="0.5"/>
-	</append>
-
 	<append xpath="/items/item[@name='solarCell']">
-		<property name="RepairTools" value="resourceCloth"/>
-	</append>
-
-	<append xpath="/items/item[@name='ulmResourceScrapWires']">
-		<property name="RepairAmount" value="100"/>
-		<property name="RepairTime" value="0.75"/>
-	</append>
-
-	<append xpath="/items/item[@name='resourceMechanicalParts']">
-		<property name="RepairAmount" value="40"/>
-		<property name="RepairTime" value="5"/>
-	</append>
-
-	<append xpath="/items/item[@name='smallEngine']">
-		<property name="RepairTools" value="resourceMechanicalParts"/>
-	</append>
-
-	<append xpath="/items/item[starts-with(@name,'ulmResourceEngineV')]">
-		<property name="RepairTools" value="resourceMechanicalParts"/>
+		<property name="RepairTools" value="resourceRepairKit"/>
+		<property name="MaintenanceGroup" value="MG_ArmorCloth"/>
 	</append>
 
 </configs>
