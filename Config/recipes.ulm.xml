@@ -73,6 +73,11 @@
 				<ingredient name="ulmResourceScrapWires" count="3"/>
 			</entry>
 		</repair>
+		
+		<recycle time="8" name="ocbElectricitySmallStator">
+			<output name="ulmResourceScrapWires" count="5,10"/>
+			<output name="resourceScrapIron" count="4,8"/>
+		</recycle>
 
 	</append>
 
