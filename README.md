@@ -134,6 +134,10 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.3.2
+
+- [UL] Add small stator recycler recipe
+
 ### Version 0.3.1
 
 - [DF] Introducing compatibility for Darkness Falls (experimental)
