@@ -30,7 +30,7 @@
 			<property name="CreativeMode" value="Player"/>
 			<property name="Extends" value="ocbElectricityWindmillBase"/>
 			<property name="CustomIcon" value="ui_game_symbol_windmill_rustic" />
-			<property name="Model" value="#@modfolder:Resources/WesternWindmill.unity3d?WindmillWesternPrefab" />
+			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?RusticWindmill" />
 
 			<property name="Material" value="Mwood"/>
 			<property name="LPHardnessScale" value="4"/>
@@ -51,7 +51,7 @@
 			<property name="CreativeMode" value="Player"/>
 			<property name="Extends" value="ocbElectricityWindmillBase"/>
 			<property name="CustomIcon" value="ui_game_symbol_windmill_modern" />
-			<property name="Model" value="#@modfolder:Resources/Windmill.unity3d?WindmillPrefab" />
+			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?ModernWindmill" />
 
 			<property name="Material" value="Msteel"/>
 			<property name="LPHardnessScale" value="8"/>
