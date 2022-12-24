@@ -134,6 +134,11 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.3.3
+
+- [UL] Update ModXmlPatcher to Version 4 (fix UL compatibility)
+- Change Unity Asset Bundle to use LZ4 compression for best load times
+
 ### Version 0.3.2
 
 - [UL] Add small stator recycler recipe
