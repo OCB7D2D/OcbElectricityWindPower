@@ -77,7 +77,7 @@ TagManager:
   - LocalPlayer
   - NotInReflections
   - ReflectionsOnly
-  - 
+  - HLOD
   - Terrain
   - Wires
   - Glass
