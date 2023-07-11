@@ -1,6 +1,6 @@
 @echo off
 
-SET NAME=ElectricityWindPower
+SET NAME=OcbElectricityWindPower
 
 if not exist build\ (
   mkdir build

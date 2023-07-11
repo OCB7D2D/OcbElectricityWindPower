@@ -7,7 +7,7 @@ of the time. Highly advices to be used with a battery bank.
 
 You need to disable EAC to use this mod!
 
-First release, not yet tested very well!
+First A21 release, not yet tested very well!
 
 ![In-Game Windmills](Screens/a21-windmills.jpg)
 
@@ -144,7 +144,7 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
-### Version 0.4.0
+### Version 0.5.0
 
 - Update compatibility for 7D2D A21.0(b313)
 - Add LOD cascade and some improved textures
@@ -189,7 +189,7 @@ familiar with that topic first. It boils down to something like:
 
 ## Compatibility
 
-I've developed and tested this Mod against version a20.b238
+Developed initially for version A20(b238), updated through A21.2(b30).
 
 [1]: https://github.com/OCB7D2D/ElectricityOverhaul
 [2]: https://docs.unity3d.com/2017.2/Documentation/Manual/SpecialFolders.html

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
-	<Name value="ElectricityWindPower" />
+	<Name value="OcbElectricityWindPower" />
 	<DisplayName value="OCB Electricity Wind Turbines" />
 	<Description value="Modern and rustic windmill generating electricity by wind." />
 	<Website value="https://github.com/OCB7D2D/ElectricityWindPower" />
 	<Author value="ocbMaurice" />
-	<Version value="0.4.0" compat="A20"/>
+	<Version value="0.5.0" />
 </xml>
