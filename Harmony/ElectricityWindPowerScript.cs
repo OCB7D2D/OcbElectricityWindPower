@@ -33,7 +33,7 @@ public class ElectricityWindPowerScript : MonoBehaviour
     // Relative to current RotorSpeed
     public float SwooshPitch = 50f;
     public float LoopPitch = 50f;
-    
+
     // Set to true when stopping
     private bool Stopped = false;
 
@@ -119,7 +119,7 @@ public class ElectricityWindPowerScript : MonoBehaviour
             RotorSpeed = Mathf.Min(RotorSpeed, WindSpeed);
         }
         // Finally rotate the rotor by given speed
-        rotor.Rotate(rotorAxis * - RotorSpeed * Time.deltaTime);
+        rotor.Rotate(rotorAxis * -RotorSpeed * Time.deltaTime);
         // Pitch the audio source
         if (AudioSwoosh != null)
         {

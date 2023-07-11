@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 using System.Linq;
 using System.Reflection;
+using UnityEngine;
 using static ElectricityWindPowerScript;
 
 #pragma warning disable IDE0051 // Remove unused private members
@@ -11,9 +11,8 @@ public class ElectricityWindPower : IModApi
 
     public void InitMod(Mod mod)
     {
-        Log.Out("Loading OCB Electricity Windmill Patch: " + GetType().ToString());
-
-        var harmony = new Harmony(GetType().ToString());
+        Log.Out("OCB Harmony Patch: " + GetType().ToString());
+        Harmony harmony = new Harmony(GetType().ToString());
         harmony.PatchAll(Assembly.GetExecutingAssembly());
         ModEvents.GameAwake.RegisterHandler(GameAwakeHandler);
     }
@@ -154,11 +153,11 @@ public class ElectricityWindPower : IModApi
             {
                 // Fix hit position if block is a child of a multi-dim block
                 BlockValue block = _actionData.invData.hitInfo.hit.blockValue;
-                if (!Block.list[block.type].Properties.Values.ContainsKey("IsWindmill")) return;
+                if (!Block.list[block.type].Properties.GetBool("MultiDimPowerBlock")) return;
                 if (block.ischild)
                 {
                     _actionData.invData.hitInfo.hit.blockPos += block.parent;
-                    _actionData.invData.hitInfo.hit.blockValue = 
+                    _actionData.invData.hitInfo.hit.voxelData.BlockValue =
                         _actionData.invData.world.GetBlock(
                             _actionData.invData.hitInfo.hit.blockPos);
                 }
@@ -176,11 +175,11 @@ public class ElectricityWindPower : IModApi
             {
                 // Fix hit position if block is a child of a multi-dim block
                 BlockValue block = _actionData.invData.hitInfo.hit.blockValue;
-                if (!Block.list[block.type].Properties.Values.ContainsKey("IsWindmill")) return;
+                if (!Block.list[block.type].Properties.GetBool("MultiDimPowerBlock")) return;
                 if (block.ischild)
                 {
                     _actionData.invData.hitInfo.hit.blockPos += block.parent;
-                    _actionData.invData.hitInfo.hit.blockValue =
+                    _actionData.invData.hitInfo.hit.voxelData.BlockValue =
                         _actionData.invData.world.GetBlock(
                             _actionData.invData.hitInfo.hit.blockPos);
 
@@ -247,7 +246,7 @@ public class ElectricityWindPower : IModApi
             if (newPowered != (bool)FieldIsPowered.GetValue(__instance))
             {
                 FieldIsPowered.SetValue(__instance, newPowered);
-                MethodIsPoweredChanged.Invoke(__instance, new object[]{ newPowered });
+                MethodIsPoweredChanged.Invoke(__instance, new object[] { newPowered });
                 // __instance.IsPoweredChanged(newPowered);
                 if (__instance.TileEntity != null)
                     __instance.TileEntity.SetModified();
@@ -305,7 +304,7 @@ public class ElectricityWindPower : IModApi
             FieldIsPowered.SetValue(__instance, consume == __instance.RequiredPower);
             power -= consume;
             MethodPowerTimerRelayCheckForActiveChange
-                .Invoke(__instance, new object[] {});
+                .Invoke(__instance, new object[] { });
             if (!__instance.PowerChildren())
                 return false;
             for (int index = 0; index < __instance.Children.Count; ++index)
