@@ -1,12 +1,9 @@
-<configs patcher-version="1">
-
+<configs>
 	<append xpath="/items">
-
 		<item name="ocbElectricitySmallStator">
-
 			<property name="HoldType" value="45"/>
 			<property name="Tags" value="junk"/>
-			<property name="CustomIcon" value="ui_game_symbol_small_stator" />
+			<property name="CustomIcon" value="ocbElectricitySmallStator"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="RepairTools" value="ulmResourceScrapWires"/>
@@ -36,12 +33,11 @@
 				<passive_effect operation="base_set" name="PowerOutput" value="25"/>
 				<passive_effect operation="base_set" name="DegradationMax" value="600"/>
 			</effect_group>
-		
 		</item>
 
 		<item name="ocbElectricityRusticWindmillBlueprint">
 			<property name="Extends" value="schematicNoQualityMaster"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_rustic"/>
+			<property name="CustomIcon" value="ocbElectricityRusticWindmill"/>
 			<property name="Group" value="Schematics,BPScience,Books,Items"/>
 			<property name="Unlocks" value="ocbElectricityRusticWindmill"/>
 			<effect_group tiered="false">
@@ -52,7 +48,7 @@
 
 		<item name="ocbElectricityModernWindmillBlueprint">
 			<property name="Extends" value="schematicNoQualityMaster"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_modern"/>
+			<property name="CustomIcon" value="ocbElectricityModernWindmill"/>
 			<property name="Group" value="Schematics,BPScience,Books,Items"/>
 			<property name="Unlocks" value="ocbElectricityModernWindmill"/>
 			<effect_group tiered="false">
@@ -60,12 +56,10 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 			</effect_group>
 		</item>
-
 	</append>
 
 	<append xpath="/items/item[@name='solarCell']">
 		<property name="RepairTools" value="resourceRepairKit"/>
 		<property name="MaintenanceGroup" value="MG_ArmorCloth"/>
 	</append>
-
 </configs>

@@ -1,0 +1,31 @@
+<configs>
+	<insertafter xpath="/lootcontainers/lootgroup/item[@name='electricianSkillMagazine' and not(@count) and not(@loot_prob_template)]">
+		<item name="renewablesSkillMagazine"/>
+	</insertafter>
+
+	<insertafter xpath="/lootcontainers/lootgroup/item[@name='electricianSkillMagazine' and @count='2']">
+		<item name="renewablesSkillMagazine" count="2"/>
+	</insertafter>
+
+	<insertafter xpath="/lootcontainers/lootgroup/item[@name='electricianSkillMagazine' and @loot_prob_template='high']">
+		<item name="renewablesSkillMagazine" loot_prob_template="high"/>
+	</insertafter>
+
+	<append xpath="/lootcontainers">
+		<lootgroup name="groupQuestT1WindMill" count="all">
+			<item name="questRewardT1WindMillBundle"/>
+		</lootgroup>
+		<lootgroup name="groupQuestT3WindMill" count="all">
+			<item name="questRewardT3WindMillBundle"/>
+		</lootgroup>
+	</append>
+
+	<!--
+  <append xpath="/lootcontainers/lootgroup[@name='groupScrapRare']">
+    <item name="ocbElectricitySmallStator" count="1,2"/>
+  </append>
+  <append xpath="/lootcontainers/lootgroup[@name='schematicsElectrical']">
+    <item name="windpowerSchematic"/>
+  </append>
+  -->
+</configs>

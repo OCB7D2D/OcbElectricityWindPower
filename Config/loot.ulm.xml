@@ -1,0 +1,9 @@
+<configs>
+	<append xpath="/lootcontainers/lootgroup[@name='groupJunkCopper']">
+		<item name="ocbElectricitySmallStator" count="1,2" loot_prob_template="veryLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='booksElectrical']">
+		<item name="ocbElectricityRusticWindmillBlueprint" loot_prob_template="med"/>
+		<item name="ocbElectricityModernWindmillBlueprint" loot_prob_template="low"/>
+	</append>
+</configs>

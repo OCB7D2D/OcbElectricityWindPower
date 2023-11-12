@@ -1,7 +1,5 @@
 <configs>
-
 	<append xpath="/recipes">
-
 		<recipe name="ocbElectricityRusticWindmillBlueprint" time="60" area="ulmStationResearch_1">
 			<ingredient name="ocbElectricitySmallStator" count="4"/>
 			<ingredient name="resourceMechanicalParts" count="4"/>
@@ -13,9 +11,7 @@
 			<ingredient name="resourcePaper" count="10"/>
 		</recipe>
 
-		<recipe name="ocbElectricityRusticWindmill" time="30"
-				tags="learnable" area="ulmStationWorkbench_1">
-
+		<recipe name="ocbElectricityRusticWindmill" time="30" tags="learnable" area="ulmStationWorkbench_1">
 			<ingredient name="resourceMechanicalParts" count="6"/>
 			<ingredient name="resourceElectricParts" count="3"/>
 			<ingredient name="ulmResourceScrapWires" count="3"/>
@@ -26,10 +22,14 @@
 			<ingredient name="ulmResourceElectronicSwitch"/>
 
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add"
-					value=".5,.5,.5,.3,.15" tags="resourceMechanicalParts,resourceElectricParts,ulmResourceScrapWires,ulmResourceNutsAndBolts,resourceScrapIron,ulmResourceScrapPlank"/>
+				<passive_effect
+					name="CraftingIngredientCount"
+					level="0,1,2,3,4"
+					operation="perc_add"
+					value=".5,.5,.5,.3,.15"
+					tags="resourceMechanicalParts,resourceElectricParts,ulmResourceScrapWires,ulmResourceNutsAndBolts,resourceScrapIron,ulmResourceScrapPlank"
+				/>
 			</effect_group>
-
 		</recipe>
 
 		<recipe name="ocbElectricityModernWindmillBlueprint" time="90" area="ulmStationResearch_2">
@@ -43,9 +43,7 @@
 			<ingredient name="resourcePaper" count="10"/>
 		</recipe>
 
-		<recipe name="ocbElectricityModernWindmill" time="45"
-				tags="learnable" area="ulmStationWorkbench_3">
-
+		<recipe name="ocbElectricityModernWindmill" time="45" tags="learnable" area="ulmStationWorkbench_3">
 			<ingredient name="resourceMilitaryFiber" count="3"/>
 			<ingredient name="resourceScrapPolymers" count="12"/>
 			<ingredient name="ulmResourceScrapWires" count="12"/>
@@ -57,10 +55,14 @@
 			<ingredient name="ulmResourceElectronicSwitch"/>
 
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add"
-					value=".5,.5,.5,.3,.15" tags="resourceMilitaryFiber,resourceScrapPolymers,ulmResourceScrapWires,resourceMechanicalParts,resourceElectricParts,resourceForgedSteel,ulmResourceElectronicCircuitboard"/>
+				<passive_effect
+					name="CraftingIngredientCount"
+					level="0,1,2,3,4"
+					operation="perc_add"
+					value=".5,.5,.5,.3,.15"
+					tags="resourceMilitaryFiber,resourceScrapPolymers,ulmResourceScrapWires,resourceMechanicalParts,resourceElectricParts,resourceForgedSteel,ulmResourceElectronicCircuitboard"
+				/>
 			</effect_group>
-
 		</recipe>
 
 		<recipe name="ocbElectricitySmallStator" time="15" area="ulmStationForge_2">
@@ -73,12 +75,10 @@
 				<ingredient name="ulmResourceScrapWires" count="3"/>
 			</entry>
 		</repair>
-		
+
 		<recycle time="8" name="ocbElectricitySmallStator">
 			<output name="ulmResourceScrapWires" count="5,10"/>
 			<output name="resourceScrapIron" count="4,8"/>
 		</recycle>
-
 	</append>
-
 </configs>

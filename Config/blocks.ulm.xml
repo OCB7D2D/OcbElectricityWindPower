@@ -1,7 +1,5 @@
 <configs>
-
 	<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
-
 		<property name="UnlockedBy" value="ocbElectricityRusticWindmillBlueprint"/>
 
 		<property name="CarryWeight" value="20"/>
@@ -32,11 +30,9 @@
 		<drop event="Destroy" count="0"/>
 
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-
 	</append>
 
 	<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
-
 		<property name="UnlockedBy" value="ocbElectricityModernWindmillBlueprint"/>
 
 		<property name="CarryWeight" value="35"/>
@@ -67,7 +63,6 @@
 		<drop event="Destroy" count="0"/>
 
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-	
 	</append>
 
 	<append xpath="/blocks/block[@name='ulmContainerCarDamageMaster0']">
@@ -108,5 +103,4 @@
 	<append xpath="/blocks/block[@name='ulmVehiclePoliceCruiserVariantHelper']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob="0.5" tag="salvage0,salvageHarvest"/>
 	</append>
-
 </configs>

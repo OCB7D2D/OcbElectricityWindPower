@@ -1,11 +1,9 @@
 <configs>
-
 	<append xpath="/items">
-
 		<item name="ocbElectricitySmallStator">
 			<property name="HoldType" value="45"/>
 			<property name="Tags" value="junk"/>
-			<property name="CustomIcon" value="ui_game_symbol_small_stator" />
+			<property name="CustomIcon" value="ocbElectricitySmallStator"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
@@ -25,7 +23,7 @@
 		<item name="windpowerSchematic">
 			<property name="Extends" value="schematicNoQualityMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_modern"/>
+			<property name="CustomIcon" value="ocbElectricityModernWindmill"/>
 			<property name="DescriptionKey" value="windpowerSchematicDesc"/>
 			<property name="Unlocks" value="ocbElectricityRusticWindmill"/>
 			<effect_group tiered="false">
@@ -44,7 +42,5 @@
 		<append xpath="/items/item[@name='smallEngine']">
 			<property name="RepairTools" value="resourceMechanicalParts"/>
 		</append>
-	
 	</append>
-
 </configs>

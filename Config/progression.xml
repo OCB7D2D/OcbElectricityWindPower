@@ -1,5 +1,4 @@
 <configs patcher-version="4">
-
 	<modif condition="UndeadLegacy_CoreModule">
 		<!-- unlocks items via schematics only -->
 	</modif>
@@ -7,8 +6,7 @@
 		<include path="progression.df.xml"/>
 	</modelsif>
 	<modelse>
-		<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='3,5']/@tags">,ocbElectricityModernWindmill</append>
-		<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @value='1' and @level='2,5']/@tags">,ocbElectricityRusticWindmill,ocbElectricitySmallStator</append>
+		<include path="progression.a21.xml"/>
+		<include path="progression.solar.xml"/>
 	</modelse>
-
 </configs>

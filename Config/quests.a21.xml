@@ -1,0 +1,8 @@
+<configs>
+	<append xpath="/quests/quest[@id='quest_tier2complete']">
+		<reward type="LootItem" id="groupQuestT1WindMill" ischosen="true" value="3"/>
+	</append>
+	<append xpath="/quests/quest[@id='quest_tier4complete']">
+		<reward type="LootItem" id="groupQuestT3WindMill" ischosen="true" value="5"/>
+	</append>
+</configs>

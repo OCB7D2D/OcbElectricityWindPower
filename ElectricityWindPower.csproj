@@ -92,21 +92,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\ElectricityGenerating.cs" />
+    <Compile Include="Harmony\ElectricityDegradation.cs" />
+    <Compile Include="Harmony\ElectricityMultiDimFix.cs" />
     <Compile Include="Harmony\ElectricityWindPower.cs" />
     <Compile Include="Harmony\AssemblyInfo.cs" />
+    <Compile Include="Harmony\ObsoletePatches.cs" />
     <Compile Include="Harmony\ElectricityWindPowerScript.cs" />
+    <Compile Include="Harmony\HarmonyFieldProxy.cs" />
+    <Compile Include="Harmony\HarmonyPropertyProxy.cs" />
     <Compile Include="Harmony\ModXmlPatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\blocks.a20.xml" />
+    <Content Include="Config\items.rewards.xml" />
+    <Content Include="Config\items.solar.xml" />
+    <Content Include="Config\blocks.solar.xml" />
+    <Content Include="Config\blocks.a21.xml" />
     <Content Include="Config\blocks.ulm.xml" />
     <Content Include="Config\blocks.xml" />
     <Content Include="Config\items.a20.xml" />
+    <Content Include="Config\items.a21.xml" />
     <Content Include="Config\items.ulm.xml" />
     <Content Include="Config\items.xml" />
     <Content Include="Config\Localization.txt" />
+    <Content Include="Config\progression.solar.xml" />
+    <Content Include="Config\recipes.solar.xml" />
+    <Content Include="Config\quests.xml" />
+    <Content Include="Config\quests.a21.xml" />
+    <Content Include="Config\traders.a21.xml" />
+    <Content Include="Config\traders.xml" />
+    <Content Include="Config\loot.a21.xml" />
+    <Content Include="Config\loot.ulm.xml" />
+    <Content Include="Config\loot.a20.xml" />
     <Content Include="Config\loot.xml" />
+    <Content Include="Config\progression.a20.xml" />
+    <Content Include="Config\progression.a21.xml" />
     <Content Include="Config\progression.xml" />
+    <Content Include="Config\recipes.a21.xml" />
     <Content Include="Config\recipes.ulm.xml" />
     <Content Include="Config\recipes.a20.xml" />
     <Content Include="Config\recipes.xml" />

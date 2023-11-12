@@ -5,6 +5,9 @@
 public class ElectricityWindPowerScript : MonoBehaviour
 {
 
+    // ####################################################################
+    // ####################################################################
+
     // Housing to rotate into the wind
     public Transform housing;
     // The "axis" to animate transform rotation
@@ -62,6 +65,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
     // Variables used to play swooshes
     private float audioAnglePlayed = 0;
 
+    // ####################################################################
+    // ####################################################################
+
     // Stop the windmill script
     // Slowly stop and then deactivate
     // Will need activation afterwards
@@ -77,12 +83,18 @@ public class ElectricityWindPowerScript : MonoBehaviour
         enabled = true;
     }
 
+    // ####################################################################
+    // ####################################################################
+
     // Called when component is created
     void Awake()
     {
         // Only enable script on clients
         enabled = !GameManager.IsDedicatedServer;
     }
+
+    // ####################################################################
+    // ####################################################################
 
     // Called after awake only if enabled
     void OnEnable()
@@ -102,6 +114,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
             AudioLoop.Stop();
         }
     }
+
+    // ####################################################################
+    // ####################################################################
 
     void UpdateRotorSpeed()
     {
@@ -144,6 +159,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
         }
     }
 
+    // ####################################################################
+    // ####################################################################
+
     void UpdateRotation()
     {
         if (housing == null) return;
@@ -175,6 +193,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
         // housing.rotation = Quaternion.Euler(0, WindDirection, 0);
     }
 
+    // ####################################################################
+    // ####################################################################
+
     // Called for every frame update
     // Called as many times as possible
     void Update()
@@ -187,6 +208,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
             enabled = false;
         }
     }
+
+    // ####################################################################
+    // ####################################################################
 
     public static float GetWindSpeed(int x, int z)
     {
@@ -206,6 +230,9 @@ public class ElectricityWindPowerScript : MonoBehaviour
             ) - 0.5f) * 720f) % 360f;
     }
 
+    // ####################################################################
+    // ####################################################################
+
     // Called for every physics update
     // Called in a fixed interval
     void FixedUpdate()
@@ -215,5 +242,8 @@ public class ElectricityWindPowerScript : MonoBehaviour
             * Random.Range(0.9f, 1.1f) * 100f;
         WindDirection = GetWindBearing(SeedX, SeedZ);
     }
+
+    // ####################################################################
+    // ####################################################################
 
 }

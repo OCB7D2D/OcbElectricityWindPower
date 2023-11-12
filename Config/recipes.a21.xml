@@ -1,0 +1,48 @@
+<configs>
+	<append xpath="/recipes">
+		<recipe name="ocbElectricityModernWindmill" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="120">
+			<ingredient name="resourceMilitaryFiber" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="60"/>
+			<ingredient name="resourceMechanicalParts" count="24"/>
+			<ingredient name="resourceElectricParts" count="6"/>
+			<ingredient name="resourceForgedSteel" count="30"/>
+			<effect_group>
+				<passive_effect
+					name="CraftingIngredientCount"
+					level="0,1,2,3,4"
+					operation="perc_add"
+					value=".5,.35,.25,.15,.0"
+					tags="resourceScrapPolymers,resourceMechanicalParts,resourceElectricParts,resourceForgedSteel"
+				/>
+			</effect_group>
+		</recipe>
+
+		<recipe name="ocbElectricityRusticWindmill" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="60">
+			<ingredient name="resourceMechanicalParts" count="6"/>
+			<ingredient name="resourceElectricParts" count="3"/>
+			<ingredient name="resourceScrapIron" count="20"/>
+			<ingredient name="resourceWood" count="80"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.35,.25,.15,.0" tags="resourceMechanicalParts,resourceElectricParts,resourceScrapIron,resourceWood"/>
+			</effect_group>
+		</recipe>
+
+		<recipe name="ocbElectricitySmallStator" count="1" material_based="true" tags="perkAdvancedEngineering,learnable" craft_area="forge" craft_time="45">
+			<ingredient name="unit_iron" count="40"/>
+			<ingredient name="unit_brass" count="120"/>
+			<ingredient name="unit_clay" count="40"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="unit_iron,unit_brass"/>
+			</effect_group>
+		</recipe>
+
+		<recipe name="ocbElectricityAlternator" count="1" material_based="true" tags="perkAdvancedEngineering,learnable" craft_area="forge" craft_time="90">
+			<ingredient name="unit_iron" count="60"/>
+			<ingredient name="unit_brass" count="180"/>
+			<ingredient name="unit_clay" count="60"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="unit_iron,unit_brass"/>
+			</effect_group>
+		</recipe>
+	</append>
+</configs>

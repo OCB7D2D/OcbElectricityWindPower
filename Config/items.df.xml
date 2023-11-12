@@ -1,10 +1,7 @@
 <configs>
-
 	<append xpath="/items/item[@name='DFLaborerClassBook']">
-
 		<!-- reset "perkRenewableEnergy" in case you want to use "perkAdvancedEngineering" instead -->
 		<effect_group name="Reset Perks if Laborer Class Taken">
-
 			<!-- Remove 1 point from progression perkRenewableEnergy -->
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffRefundRenewable1">
 				<requirement name="ProgressionLevel" progression_name="perkRenewableEnergy" operation="Equals" value="1"/>
@@ -31,9 +28,6 @@
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SkillPointSDX, SCore" target="self" value="3">
 				<requirement name="ProgressionLevel" progression_name="perkRenewableEnergy" operation="Equals" value="3"/>
 			</triggered_effect>
-
 		</effect_group>
-
 	</append>
-
 </configs>

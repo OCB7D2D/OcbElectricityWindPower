@@ -1,6 +1,10 @@
 <configs patcher-version="4">
-
 	<append xpath="/blocks">
+		<append xpath="/blocks/block[@name='solarbank']">
+			<!-- Level 1 (2000 uses) in approx 4 days -->
+			<!-- Level 6 (9000 uses) in approx 17 days -->
+			<property name="WearFactor" value="1.25"/>
+		</append>
 
 		<block name="ocbElectricityWindmillBase">
 			<property name="CreativeMode" value="None"/>
@@ -8,7 +12,8 @@
 			<property name="Tags" value="MC_playerBlocks,SC_electrical"/>
 			<property name="StabilitySupport" value="false"/>
 			<property name="IsTerrainDecoration" value="true"/>
-			<property name="Group" value="Basics,Building,advBuilding"/>
+			<property name="SortOrder1" value="B155"/>
+			<property name="Group" value="Science,TCScience"/>
 			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 			<property name="DescriptionKey" value="ocbElectricityWindmillDesc"/>
 			<property name="DisplayType" value="blockElectricalHardened"/>
@@ -19,18 +24,18 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="FilterTags" value="floot"/>
 			<property name="IsWindmill" value="true"/>
-			<property name="CanPickup" value="true" />
+			<property name="WearFactor" value="1"/>
+			<property name="CanPickup" value="true"/>
 			<property name="TakeDelay" value="30"/>
 			<property name="Material" value="Mmetal"/>
 		</block>
 
 		<block name="ocbElectricityRusticWindmill">
-
-			<property name="Shape" value="ModelEntity" />
+			<property name="Shape" value="ModelEntity"/>
 			<property name="CreativeMode" value="Player"/>
 			<property name="Extends" value="ocbElectricityWindmillBase"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_rustic" />
-			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?RusticWindmill" />
+			<property name="CustomIcon" value="ocbElectricityRusticWindmill"/>
+			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?RusticWindmill"/>
 
 			<property name="Material" value="Mwood"/>
 			<property name="LPHardnessScale" value="4"/>
@@ -40,18 +45,24 @@
 			<property name="EconomicBundleSize" value="1"/>
 
 			<property name="MultiBlockDim" value="3,6,3"/>
+			<property name="MultiDimPowerBlock" value="true"/>
 			<property name="SlotItem" value="ocbElectricitySmallStator"/>
 			<property name="Weight" value="1200"/>
 
+			<!-- Level 1 (2000 uses) in approx 4.5 days -->
+			<!-- Level 6 (9000 uses) in approx 21 days -->
+			<property name="WearFactor" value="1"/>
+			<property name="SortOrder2" value="0003a"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
 		</block>
 
 		<block name="ocbElectricityModernWindmill">
-
-			<property name="Shape" value="ModelEntity" />
+			<property name="WearFactor" value="1.5"/>
+			<property name="Shape" value="ModelEntity"/>
 			<property name="CreativeMode" value="Player"/>
 			<property name="Extends" value="ocbElectricityWindmillBase"/>
-			<property name="CustomIcon" value="ui_game_symbol_windmill_modern" />
-			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?ModernWindmill" />
+			<property name="CustomIcon" value="ocbElectricityModernWindmill"/>
+			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?ModernWindmill"/>
 
 			<property name="Material" value="Msteel"/>
 			<property name="LPHardnessScale" value="8"/>
@@ -61,34 +72,28 @@
 			<property name="EconomicBundleSize" value="1"/>
 
 			<property name="MultiBlockDim" value="3,7,3"/>
-			<property name="SlotItem" value="smallEngine"/>
+			<property name="MultiDimPowerBlock" value="true"/>
+			<property name="SlotItem" value="ocbElectricityAlternator"/>
 			<property name="Weight" value="2000"/>
 
+			<!-- Level 1 (2000 uses) in approx 5.5 days -->
+			<!-- Level 6 (9000 uses) in approx 25 days -->
+			<property name="WearFactor" value="0.85"/>
+			<property name="SortOrder2" value="0003b"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
 		</block>
-
 	</append>
 
-	<append xpath="/blocks/block[@name='cntCar03SedanDamage0Master']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntCar03SedanDamage1Master']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntCar03SedanDamage2Master']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.2" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntBusSchool']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.4" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntArmyTruckOpen']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.5" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntTiltTruckEmpty']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.5" tag="salvageHarvest"/>
-	</append>
-	<append xpath="/blocks/block[@name='cntTrashCompactor']">
-		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
-	</append>
+	<insertafter xpath="/blocks/block/drop[@event='Harvest' and @name='smallEngine' and @prob='.5']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="0,1" prob=".5" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ocbElectricityAlternator" count="0,1" prob=".5" tag="salvageHarvest"/>
+	</insertafter>
+
+	<insertafter xpath="/blocks/block/drop[@event='Harvest' and @name='smallEngine' and @prob='0.25']">
+		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.25" tag="salvageHarvest"/>
+		<drop event="Harvest" name="ocbElectricityAlternator" count="1" prob="0.25" tag="salvageHarvest"/>
+	</insertafter>
+
 	<append xpath="/blocks/block[@name='cntWasherOpen']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.05" tag="salvageHarvest"/>
 	</append>
@@ -115,7 +120,7 @@
 		<include path="blocks.ulm.xml"/>
 	</modif>
 	<modelse>
-		<include path="blocks.a20.xml"/>
+		<include path="blocks.a21.xml"/>
+		<include path="blocks.solar.xml"/>
 	</modelse>
-
 </configs>

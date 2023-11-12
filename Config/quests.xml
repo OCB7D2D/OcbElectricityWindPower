@@ -1,0 +1,3 @@
+<configs patcher-version="4">
+	<include path="quests.a21.xml"/>
+</configs>

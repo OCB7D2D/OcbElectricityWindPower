@@ -1,7 +1,5 @@
 <configs patcher-version="1">
-
 	<modif condition="Darkness Falls Core">
 		<include path="dialogs.df.xml"/>
 	</modif>
-
 </configs>

@@ -1,6 +1,6 @@
 <configs patcher-version="4">
 	<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
-		<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
+		<property name="UnlockedBy" value="craftingRenewables"/>
 
 		<property name="Stacknumber" value="4"/>
 
@@ -20,7 +20,7 @@
 	</append>
 
 	<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
-		<property name="UnlockedBy" value="perkAdvancedEngineering,windpowerSchematic"/>
+		<property name="UnlockedBy" value="craftingRenewables"/>
 
 		<property name="Stacknumber" value="2"/>
 
