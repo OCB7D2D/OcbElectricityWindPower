@@ -9,7 +9,17 @@ You need to disable EAC to use this mod!
 
 First release, not yet tested very well!
 
-![In-Game Windmills](Screens/in-game-windmills.jpg)
+![In-Game Windmills](Screens/a21-windmills.jpg)
+
+![Windmill journal](Screens/a21-journal.png)
+
+![Windmill Stator](Screens/a21-stator.png)
+
+![Windmill alternator](Screens/a21-alternator.png)
+
+![Renewable Energy Magazine](Screens/a21-magazine.png)
+
+![Renewable Energy Skills](Screens/a21-skills.png)
 
 This Mod is part of my bigger [electricity overhaul][1], but
 should also work on its own. Also works in multi-player, but due to
