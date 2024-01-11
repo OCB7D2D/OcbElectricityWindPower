@@ -65,7 +65,6 @@ public class ElectricityGenerating
             ref float ___lightUpdateTime, ref byte ___sunLight,
             ref bool ___lastHasLight, ref bool ___hasChangesLocal)
         {
-            Log.Out("Into check ligh level");
             // Wait a bit longer to update wind/sun
             // We may send changes often over the wire
             // Add a very slight variation to ensure we don't all
@@ -92,8 +91,6 @@ public class ElectricityGenerating
             // Update optional field (electricity overhaul)
             if (ElectricityWindPower.HasElectricityOverhaul && FieldLightLevel != null)
                 FieldLightLevel.SetValue(__instance, (ushort)(factor * ushort.MaxValue));
-
-            Log.Out("--- Check light level {0} - {1} - {2}", ElectricityWindPower.HasElectricityOverhaul, FieldLightLevel, factor);
 
             // We keep the power generation to a minimum of 1 watts
             // This will make sure we can always switch it off
