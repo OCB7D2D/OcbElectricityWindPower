@@ -144,6 +144,10 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.5.1
+
+- Fix issue with battery bank etc. not working anymore
+
 ### Version 0.5.0
 
 - Update compatibility for 7D2D A21.0(b313)
