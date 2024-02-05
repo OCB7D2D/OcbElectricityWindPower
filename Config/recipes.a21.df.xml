@@ -1,0 +1,72 @@
+<configs>
+	<append xpath="/recipes">
+		<!-- learnable by reading windpowerSchematic -->
+		<recipe
+			name="ocbElectricityRusticWindmill"
+			count="1"
+			tags="perkAdvancedEngineering,learnable,workbenchCrafting"
+			craft_area="workbench"
+			material_based="false"
+			craft_time="120"
+			craft_tool="meleeToolRepairT1ClawHammer"
+		>
+			<ingredient name="resourceMechanicalParts" count="6"/>
+			<ingredient name="resourceElectricParts" count="3"/>
+			<ingredient name="resourceScrapIron" count="20"/>
+			<ingredient name="resourceWood" count="80"/>
+		</recipe>
+
+		<!-- learnable by reading windpowerSchematic -->
+		<recipe
+			name="ocbElectricityModernWindmill"
+			count="1"
+			tags="perkAdvancedEngineering,learnable,workbenchCrafting"
+			craft_area="workstationMetal"
+			material_based="false"
+			craft_time="240"
+			craft_tool="DFtoolweldingTorch"
+		>
+			<ingredient name="resourceMilitaryFiber" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="12"/>
+			<ingredient name="resourceMechanicalParts" count="12"/>
+			<ingredient name="resourceElectricParts" count="6"/>
+			<ingredient name="resourceForgedSteel" count="20"/>
+		</recipe>
+
+		<!-- learnable by reading windpowerSchematic -->
+		<recipe name="ocbElectricitySmallStator" count="1" tags="perkAdvancedEngineering,learnable" craft_area="advforge" material_based="false" craft_time="300" craft_tool="toolAndDieSet">
+			<ingredient name="resourceForgedIron" count="12"/>
+			<ingredient name="resourceScrapBrass" count="120"/>
+			<ingredient name="resourceScrapPolymers" count="60"/>
+		</recipe>
+
+    <recipe name="ocbElectricityAlternator" count="1" tags="perkAdvancedEngineering,learnable" craft_area="advforge" material_based="false" craft_time="300" craft_tool="toolForgeCrucible">
+      <ingredient name="resourceForgedIron" count="20"/>
+      <ingredient name="resourceScrapBrass" count="160"/>
+      <ingredient name="resourceScrapPolymers" count="80"/>
+    </recipe>
+
+    <recipe name="solarbank" count="1" tags="perkAdvancedEngineering,learnable,workbenchCrafting" craft_area="workstationMetal" material_based="false" craft_time="120" craft_tool="DFtoolweldingTorch">
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceElectricParts" count="60"/>
+			<ingredient name="resourceMechanicalParts" count="20"/>
+			<ingredient name="resourceScrapPolymers" count="20"/>
+			<ingredient name="resourceDuctTape" count="8"/>
+		</recipe>
+
+		<recipe name="solarCell" count="1" tags="perkAdvancedEngineering,learnable,workbenchCrafting" craft_area="ScifiBench" material_based="false" craft_time="600" craft_tool="DFScifiAIOT">
+			<ingredient name="resourceAcid" count="2"/>
+			<ingredient name="resourceBrokenGlass" count="200"/>
+			<ingredient name="resourceScrapLead" count="200"/>
+			<ingredient name="resourceElectricParts" count="24"/>
+			<ingredient name="resourceMechanicalParts" count="6"/>
+		</recipe>
+
+		<!-- Helper recipe for solar cells (a bit ambiguous in DF, but at least the icons are different and resource still exists) -->
+		<recipe name="resourceBrokenGlass" count="10" craft_area="advforge" material_based="false" craft_time="60" tags="forgeCrafting" craft_tool="toolForgeCrucible" always_unlocked="true">
+			<ingredient name="resourceCrushedSand" count="200"/>
+			<ingredient name="resourceRockSmall" count="10"/>
+			<ingredient name="resourceClayLump" count="4"/>
+		</recipe>
+	</append>
+</configs>

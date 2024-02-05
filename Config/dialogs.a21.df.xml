@@ -1,0 +1,40 @@
+<configs>
+	<append xpath="/dialogs/dialog[@id='traderBob']">
+		<response id="response_renewables_1" text="response_renewables_1" nextstatementid="start">
+			<requirement type="HasCVarSDX, SCore" value="5" requirementtype="Hide" operator="GTE" id="traderBobFaction" Hash="Requirement_292948548"/>
+			<requirement type="HasCVarSDX, SCore" value="1" requirementtype="Hide" operator="LT" id="perkRenewableEnergyCrafting" Hash="Requirement_-1518065101"/>
+			<requirement type="HasItemSDX, SCore" value="500" requirementtype="Hide" id="casinoCoin" Hash="Requirement_123757519"/>
+			<action type="GiveToNPC, SCore" id="casinoCoin" value="500"/>
+			<action type="AddBuff" id="perkRenewableEnergyLvl"/>
+			<action type="AddCVar, SCore" id="perkRenewableEnergyCrafting" value="1" operator="set"/>
+		</response>
+
+		<response id="response_renewables_2" text="response_renewables_2" nextstatementid="start">
+			<requirement type="HasCVarSDX, SCore" value="10" requirementtype="Hide" operator="GTE" id="traderBobFaction" Hash="Requirement_292948548"/>
+			<requirement type="HasCVarSDX, SCore" value="1" requirementtype="Hide" operator="Equals" id="perkRenewableEnergyCrafting" Hash="Requirement_-1518065101"/>
+			<requirement type="HasCVarSDX, SCore" value="2" requirementtype="Hide" operator="LT" id="perkRenewableEnergyCrafting" Hash="Requirement_-1518065101"/>
+			<requirement type="HasItemSDX, SCore" value="1000" requirementtype="Hide" id="casinoCoin" Hash="Requirement_123757519"/>
+			<action type="GiveToNPC, SCore" id="casinoCoin" value="1000"/>
+			<action type="AddBuff" id="perkRenewableEnergyLvl"/>
+			<action type="AddCVar, SCore" id="perkRenewableEnergyCrafting" value="2" operator="set"/>
+		</response>
+
+		<response id="response_renewables_3" text="response_renewables_3" nextstatementid="start">
+			<requirement type="HasCVarSDX, SCore" value="15" requirementtype="Hide" operator="GTE" id="traderBobFaction" Hash="Requirement_292948548"/>
+			<requirement type="HasCVarSDX, SCore" value="2" requirementtype="Hide" operator="Equals" id="perkRenewableEnergyCrafting" Hash="Requirement_-1518065101"/>
+			<requirement type="HasCVarSDX, SCore" value="3" requirementtype="Hide" operator="LT" id="perkRenewableEnergyCrafting" Hash="Requirement_-1518065101"/>
+			<requirement type="HasItemSDX, SCore" value="2000" requirementtype="Hide" id="casinoCoin" Hash="Requirement_123757519"/>
+			<action type="GiveToNPC, SCore" id="casinoCoin" value="2000"/>
+			<action type="AddBuff" id="perkRenewableEnergyLvl"/>
+			<action type="AddCVar, SCore" id="perkRenewableEnergyCrafting" value="3" operator="set"/>
+		</response>
+	</append>
+
+	<remove xpath="/dialogs/dialog[@id='traderBob']/statement[@id='statement_1491868662']/response_entry[@id='nevermind']"/>
+	<append xpath="/dialogs/dialog[@id='traderBob']/statement[@id='statement_1491868662']">
+		<response_entry id="response_renewables_1" ref_text="Renewable Energy 1 (500)"/>
+		<response_entry id="response_renewables_2" ref_text="Renewable Energy 2 (1000)"/>
+		<response_entry id="response_renewables_3" ref_text="Renewable Energy 3 (2000)"/>
+		<response_entry id="nevermind"/>
+	</append>
+</configs>

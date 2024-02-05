@@ -17,6 +17,9 @@ public class ElectricityWindPower : IModApi
     {
         Log.Out("OCB Harmony Patch: " + GetType().ToString());
         Harmony harmony = new Harmony(GetType().ToString());
+        // Darkness Falls has item quality up to 80
+        if (ModManager.ModLoaded("DarknessFallsCore"))
+            ElectricityDegradation.MaxQuality = 80f;
         // ToDo: find a way to avoid patching at all for relevant ones
         HasElectricityOverhaul = ModManager.ModLoaded("OcbElectricityOverhaul");
         harmony.PatchAll(Assembly.GetExecutingAssembly());

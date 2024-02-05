@@ -28,7 +28,7 @@
 			<property name="CanPickup" value="true"/>
 			<property name="TakeDelay" value="30"/>
 			<property name="Material" value="Mmetal"/>
-		</block>
+    </block>
 
 		<block name="ocbElectricityRusticWindmill">
 			<property name="Shape" value="ModelEntity"/>
@@ -38,7 +38,9 @@
 			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?RusticWindmill"/>
 
 			<property name="Material" value="Mwood"/>
-			<property name="LPHardnessScale" value="4"/>
+      <property name="MaxDamage" value="500"/>
+      <property name="explosionresistance" value="1.25"/>
+      <property name="LPHardnessScale" value="4"/>
 			<property name="SellableToTrader" value="true"/>
 
 			<property name="EconomicValue" value="100"/>
@@ -65,7 +67,9 @@
 			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?ModernWindmill"/>
 
 			<property name="Material" value="Msteel"/>
-			<property name="LPHardnessScale" value="8"/>
+      <property name="MaxDamage" value="3500"/>
+      <property name="explosionresistance" value="2"/>
+      <property name="LPHardnessScale" value="8"/>
 			<property name="SellableToTrader" value="true"/>
 
 			<property name="EconomicValue" value="300"/>
@@ -117,9 +121,14 @@
 	</append>
 
 	<modif condition="UndeadLegacy_CoreModule">
-		<include path="blocks.ulm.xml"/>
+		<include path="blocks.a20.ulm.xml"/>
 	</modif>
-	<modelse>
+  <modelsif condition="DarknessFallsCore">
+    <include path="blocks.a21.xml"/>
+    <include path="blocks.solar.xml"/>
+    <include path="blocks.a21.df.xml"/>
+  </modelsif>
+  <modelse>
 		<include path="blocks.a21.xml"/>
 		<include path="blocks.solar.xml"/>
 	</modelse>
