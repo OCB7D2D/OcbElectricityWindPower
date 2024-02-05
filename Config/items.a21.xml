@@ -18,6 +18,7 @@
 			<!-- stacking for items that go in slots doesn't work -->
 			<!-- otherwise full stacks are moved to the slots :-/ -->
 			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="RepairExpMultiplier" value="2.5"/>
 			<property name="ShowQuality" value="true"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="80"/>
@@ -43,6 +44,7 @@
 			<!-- stacking for items that go in slots doesn't work -->
 			<!-- otherwise full stacks are moved to the slots :-/ -->
 			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="RepairExpMultiplier" value="2.5"/>
 			<property name="ShowQuality" value="true"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="220"/>

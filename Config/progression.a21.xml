@@ -25,11 +25,11 @@
 
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,125" value="1" tags="ocbElectricityRusticWindmill"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_add" level="35,125" value="1" tags="ocbElectricitySmallStator"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,125" value="1" tags="ocbElectricitySmallStator"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,125" value="1" tags="ocbElectricityModernWindmill"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,125" value="1" tags="ocbElectricityAlternator"/>
-				<passive_effect name="CraftingTier" operation="base_add" level="50,65,80,95" value="1,2,3,4" tags="ocbElectricitySmallStator"/>
-				<passive_effect name="CraftingTier" operation="base_add" level="70,85,100,115" value="1,2,3,4" tags="ocbElectricityAlternator"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="50,65,80,95,125" value="1,2,3,4,4" tags="ocbElectricitySmallStator"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="70,85,100,115,125" value="1,2,3,4,4" tags="ocbElectricityAlternator"/>
 			</effect_group>
 		</crafting_skill>
 	</insertafter>

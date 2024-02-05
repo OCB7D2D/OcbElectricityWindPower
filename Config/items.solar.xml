@@ -7,5 +7,6 @@
 	<append xpath="/items/item[@name='solarCell']">
 		<property name="UnlockedBy" value="craftingRenewables"/>
 		<property name="RepairTools" value="resourceCloth"/>
+		<property name="RepairExpMultiplier" value="2.5"/>
 	</append>
 </configs>

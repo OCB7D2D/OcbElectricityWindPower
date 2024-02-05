@@ -27,7 +27,7 @@
 			</effect_group>
 		</recipe>
 
-		<recipe name="ocbElectricitySmallStator" count="1" material_based="true" tags="perkAdvancedEngineering,learnable" craft_area="forge" craft_time="45">
+		<recipe name="ocbElectricitySmallStator" count="1" material_based="true" tags="learnable" craft_area="forge" craft_time="45">
 			<ingredient name="unit_iron" count="40"/>
 			<ingredient name="unit_brass" count="120"/>
 			<ingredient name="unit_clay" count="40"/>
@@ -36,7 +36,7 @@
 			</effect_group>
 		</recipe>
 
-		<recipe name="ocbElectricityAlternator" count="1" material_based="true" tags="perkAdvancedEngineering,learnable" craft_area="forge" craft_time="90">
+		<recipe name="ocbElectricityAlternator" count="1" material_based="true" tags="learnable" craft_area="forge" craft_time="90" craft_tool="toolForgeCrucible">
 			<ingredient name="unit_iron" count="60"/>
 			<ingredient name="unit_brass" count="180"/>
 			<ingredient name="unit_clay" count="60"/>

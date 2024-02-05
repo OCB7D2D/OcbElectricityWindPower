@@ -144,6 +144,13 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.5.2
+
+- Fix issue with stator/alternator crafting having no quality  
+  Quality was wrongly linked to `perkAdvancedEngineering`
+- Alternator now requires a crucible to forge.
+- Repairing stator/alternator gives 250% xp.
+
 ### Version 0.5.1
 
 - Fix issue with battery bank etc. not working anymore
