@@ -144,6 +144,11 @@ familiar with that topic first. It boils down to something like:
 
 ## Changelog
 
+### Version 0.5.3
+
+- Adds initial Darkness Falls (A21) compatibility
+- Removes left-over debug message (don't spam logs)
+
 ### Version 0.5.2
 
 - Fix issue with stator/alternator crafting having no quality  
@@ -200,7 +205,7 @@ familiar with that topic first. It boils down to something like:
 
 ## Compatibility
 
-Developed initially for version A20(b238), updated through A21.2(b30).
+Developed initially for version A20(b238), updated through A21.2(b37).
 
-[1]: https://github.com/OCB7D2D/ElectricityOverhaul
+[1]: https://github.com/OCB7D2D/OcbElectricityOverhaul
 [2]: https://docs.unity3d.com/2017.2/Documentation/Manual/SpecialFolders.html

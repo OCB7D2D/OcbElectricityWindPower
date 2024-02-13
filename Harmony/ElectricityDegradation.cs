@@ -24,7 +24,6 @@ public class ElectricityDegradation
                 if (stack.IsEmpty()) continue;
                 if (stack.itemValue.MaxUseTimes <= 0 || stack.itemValue.MaxUseTimes > stack.itemValue.UseTimes)
                 {
-                    Log.Warning("Max is {0} vs {1}", MaxQuality, stack.itemValue.Quality);
                     __instance.MaxOutput += (ushort)(__instance.OutputPerStack *
                         (double)Mathf.Lerp(0.5f, 1f, stack.itemValue.Quality / MaxQuality));
                 }
