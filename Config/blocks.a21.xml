@@ -1,4 +1,4 @@
-<configs patcher-version="4">
+<configs patcher-version="6">
 	<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
 		<property name="UnlockedBy" value="craftingRenewables"/>
 

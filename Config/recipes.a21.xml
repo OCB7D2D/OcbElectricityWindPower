@@ -1,7 +1,7 @@
 <configs>
 	<append xpath="/recipes">
 		<recipe name="ocbElectricityModernWindmill" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="120">
-			<ingredient name="resourceMilitaryFiber" count="3"/>
+			<!-- <ingredient name="resourceMilitaryFiber" count="3"/> -->
 			<ingredient name="resourceScrapPolymers" count="60"/>
 			<ingredient name="resourceMechanicalParts" count="24"/>
 			<ingredient name="resourceElectricParts" count="6"/>

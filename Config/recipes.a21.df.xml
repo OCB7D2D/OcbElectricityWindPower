@@ -26,7 +26,7 @@
 			craft_time="240"
 			craft_tool="DFtoolweldingTorch"
 		>
-			<ingredient name="resourceMilitaryFiber" count="3"/>
+			<!-- <ingredient name="resourceMilitaryFiber" count="3"/> -->
 			<ingredient name="resourceScrapPolymers" count="12"/>
 			<ingredient name="resourceMechanicalParts" count="12"/>
 			<ingredient name="resourceElectricParts" count="6"/>
@@ -40,13 +40,13 @@
 			<ingredient name="resourceScrapPolymers" count="60"/>
 		</recipe>
 
-    <recipe name="ocbElectricityAlternator" count="1" tags="perkAdvancedEngineering,learnable" craft_area="advforge" material_based="false" craft_time="300" craft_tool="toolForgeCrucible">
-      <ingredient name="resourceForgedIron" count="20"/>
-      <ingredient name="resourceScrapBrass" count="160"/>
-      <ingredient name="resourceScrapPolymers" count="80"/>
-    </recipe>
+		<recipe name="ocbElectricityAlternator" count="1" tags="perkAdvancedEngineering,learnable" craft_area="advforge" material_based="false" craft_time="300" craft_tool="toolForgeCrucible">
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceScrapBrass" count="160"/>
+			<ingredient name="resourceScrapPolymers" count="80"/>
+		</recipe>
 
-    <recipe name="solarbank" count="1" tags="perkAdvancedEngineering,learnable,workbenchCrafting" craft_area="workstationMetal" material_based="false" craft_time="120" craft_tool="DFtoolweldingTorch">
+		<recipe name="solarbank" count="1" tags="perkAdvancedEngineering,learnable,workbenchCrafting" craft_area="workstationMetal" material_based="false" craft_time="120" craft_tool="DFtoolweldingTorch">
 			<ingredient name="resourceForgedSteel" count="40"/>
 			<ingredient name="resourceElectricParts" count="60"/>
 			<ingredient name="resourceMechanicalParts" count="20"/>

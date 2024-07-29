@@ -1,8 +1,8 @@
-<configs patcher-version="4">
-  <modif condition="DarknessFallsCore">
-    <!-- <include path="traders.a21.df.xml"/> -->
-  </modif>
-  <modelse>
-  <include path="traders.a21.xml"/>
-  </modelse>
+<configs patcher-version="6">
+	<modif condition="DarknessFallsCore">
+		<!-- <modinc path="traders.a21.df.xml"/> -->
+	</modif>
+	<modelse>
+		<modinc path="traders.a21.xml"/>
+	</modelse>
 </configs>

@@ -1,10 +1,9 @@
 <configs>
+	<setattribute xpath="/items/item[@name='ocbElectricitySmallStator']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
+	<setattribute xpath="/items/item[@name='ocbElectricityAlternator']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
+	<setattribute xpath="/items/item[@name='solarCell']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
 
-  <setattribute xpath="/items/item[@name='ocbElectricitySmallStator']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
-  <setattribute xpath="/items/item[@name='ocbElectricityAlternator']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
-  <setattribute xpath="/items/item[@name='solarCell']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
-
-  <append xpath="/items/item[@name='DFLaborerClassBook']">
+	<append xpath="/items/item[@name='DFLaborerClassBook']">
 		<!-- reset "perkRenewableEnergy" in case you want to use "perkAdvancedEngineering" instead -->
 		<effect_group name="Reset Perks if Laborer Class Taken">
 			<!-- Remove 1 point from progression perkRenewableEnergy -->

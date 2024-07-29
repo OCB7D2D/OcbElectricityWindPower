@@ -1,12 +1,10 @@
 <configs>
-
-  <append xpath="/lootcontainers">
-    <lootgroup name="groupQuestT1WindMill" count="all">
-      <item name="questRewardT1WindMillBundle"/>
-    </lootgroup>
-    <lootgroup name="groupQuestT3WindMill" count="all">
-      <item name="questRewardT3WindMillBundle"/>
-    </lootgroup>
-  </append>
-
+	<append xpath="/lootcontainers">
+		<lootgroup name="groupQuestT1WindMill" count="all">
+			<item name="questRewardT1WindMillBundle"/>
+		</lootgroup>
+		<lootgroup name="groupQuestT3WindMill" count="all">
+			<item name="questRewardT3WindMillBundle"/>
+		</lootgroup>
+	</append>
 </configs>

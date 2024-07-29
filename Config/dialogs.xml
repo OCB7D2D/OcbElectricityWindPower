@@ -1,5 +1,5 @@
-<configs patcher-version="1">
+<configs patcher-version="6">
 	<modif condition="DarknessFallsCore">
-		<include path="dialogs.a21.df.xml"/>
+		<modinc path="dialogs.a21.df.xml"/>
 	</modif>
 </configs>

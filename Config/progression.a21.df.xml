@@ -45,6 +45,5 @@
 	</append>
 
 	<!-- Get better quality by improving tool craftin perk (both are available with same quality, so alternators and solar cells are probably unlocked at high quality anyway, maybe find a better way) -->
-  <append xpath="/progression/perks/perk[@name='perkCraftTools']/effect_group/passive_effect[@name='CraftingTier']/@tags">,ocbElectricitySmallStator,ocbElectricityAlternator,solarCell</append>
-
+	<append xpath="/progression/perks/perk[@name='perkCraftTools']/effect_group/passive_effect[@name='CraftingTier']/@tags">,ocbElectricitySmallStator,ocbElectricityAlternator,solarCell</append>
 </configs>

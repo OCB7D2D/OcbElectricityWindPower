@@ -1,4 +1,4 @@
-# OCB Electricity Wind Power Mod - 7 Days to Die (A21) Addon
+# OCB Electricity Wind Power Mod - 7 Days to Die (V2.1) Addon
 
 Adding new power class and block for a modern windmill that
 produces energy day and night by wind power. Although wind
@@ -143,6 +143,10 @@ familiar with that topic first. It boils down to something like:
 ```
 
 ## Changelog
+
+### Version 0.6.0
+
+- Update compatibility for 7D2D V2.1 stable
 
 ### Version 0.5.3
 

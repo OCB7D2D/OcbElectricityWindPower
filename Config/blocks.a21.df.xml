@@ -1,6 +1,4 @@
 <configs>
-
-  <setattribute xpath="/blocks/block[@name='ocbElectricityRusticWindmill']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
-  <setattribute xpath="/blocks/block[@name='ocbElectricityModernWindmill']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
-
+	<setattribute xpath="/blocks/block[@name='ocbElectricityRusticWindmill']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
+	<setattribute xpath="/blocks/block[@name='ocbElectricityModernWindmill']/property[@name='UnlockedBy']" name="value">perkRenewableEnergy,perkAdvancedEngineering</setattribute>
 </configs>
