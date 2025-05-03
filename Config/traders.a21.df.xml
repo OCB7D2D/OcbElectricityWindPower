@@ -1,6 +1,0 @@
-<configs>
-  <insertafter xpath="/traders/trader_item_groups/trader_item_group/item[@name='traderElectrical' and @count='1']">
-    <item name="ocbElectricityRusticWindmill" count="1" prop="0.8"/>
-    <item name="ocbElectricityModernWindmill" count="1" prop="0.5"/>
-  </insertafter>
-</configs>

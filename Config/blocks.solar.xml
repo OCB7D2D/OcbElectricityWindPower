@@ -1,5 +1,0 @@
-<configs>
-	<append xpath="/blocks/block[@name='solarbank']">
-		<property name="UnlockedBy" value="craftingRenewables"/>
-	</append>
-</configs>

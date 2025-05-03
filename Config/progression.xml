@@ -1,12 +1,62 @@
-<configs patcher-version="4">
-	<modif condition="UndeadLegacy_CoreModule">
-		<!-- unlocks items via schematics only -->
-	</modif>
-	<modelsif condition="DarknessFallsCore">
-		<include path="progression.a21.df.xml"/>
-	</modelsif>
+<configs patcher-version="7">
 	<modelse>
-		<include path="progression.a21.xml"/>
-		<include path="progression.solar.xml"/>
+		<insertafter xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']">
+			<!-- *** RENEWABLES_SKILLS -->
+			<crafting_skill
+				name="craftingRenewables"
+				max_level="125"
+				parent="attCrafting"
+				name_key="craftingRenewablesName"
+				desc_key="craftingRenewablesDesc"
+				long_desc_key="craftingRenewablesLongDesc"
+				icon="ui_game_symbol_electric_solar"
+			>
+				<display_entry icon="ocbElectricityRusticWindmill" name_key="renewablesT1" has_quality="false" unlock_level="25">
+					<unlock_entry item="ocbElectricityRusticWindmill" unlock_tier="1"/>
+				</display_entry>
+				<display_entry icon="ocbElectricitySmallStator" name_key="renewablesT2" has_quality="true" unlock_level="35,50,65,80,95">
+					<unlock_entry item="ocbElectricitySmallStator" unlock_tier="1"/>
+				</display_entry>
+				<display_entry icon="ocbElectricityModernWindmill" name_key="renewablesT3" has_quality="false" unlock_level="50">
+					<unlock_entry item="ocbElectricityModernWindmill" unlock_tier="1"/>
+				</display_entry>
+				<display_entry icon="ocbElectricityAlternator" name_key="renewablesT4" has_quality="true" unlock_level="55,70,85,100,115">
+					<unlock_entry item="ocbElectricityAlternator" unlock_tier="1"/>
+				</display_entry>
+
+				<effect_group>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,125" value="1" tags="ocbElectricityRusticWindmill"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,125" value="1" tags="ocbElectricitySmallStator"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,125" value="1" tags="ocbElectricityModernWindmill"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,125" value="1" tags="ocbElectricityAlternator"/>
+					<passive_effect name="CraftingTier" operation="base_add" level="50,65,80,95,125" value="1,2,3,4,4" tags="ocbElectricitySmallStator"/>
+					<passive_effect name="CraftingTier" operation="base_add" level="70,85,100,115,125" value="1,2,3,4,4" tags="ocbElectricityAlternator"/>
+				</effect_group>
+			</crafting_skill>
+		</insertafter>
+
+		<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group[1]">
+			<!-- Increase the chance to find renewables crafting skill magazines with each perk rank up to crafting skill 125 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="renewablesCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRenewables" operation="LT" value="125"/>
+			</passive_effect>
+			<!-- Once renewables crafting skill reaches 125, set the probability bonus of finding renewables crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="renewablesCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRenewables" operation="Equals" value="125"/>
+			</passive_effect>
+		</append>
+		
+		
+		<!-- <insertbefore xpath="/progression/crafting_skills/crafting_skill[@name='craftingRenewables']/effect_group[1]"> -->
+			<!-- <display_entry icon="solarCell" name_key="renewablesT5" has_quality="true" unlock_level="65,80,95,110,125"> -->
+				<!-- <unlock_entry item="solarCell,solarbank" unlock_tier="1"/> -->
+			<!-- </display_entry> -->
+		<!-- </insertbefore> -->
+
+		<!-- <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRenewables']/effect_group[1]"> -->
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,125" value="1" tags="solarbank"/> -->
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="65,125" value="1" tags="solarCell"/> -->
+			<!-- <passive_effect name="CraftingTier" operation="base_add" level="80,95,110,125" value="1,2,3,4" tags="solarCell"/> -->
+		<!-- </append> -->
 	</modelse>
 </configs>

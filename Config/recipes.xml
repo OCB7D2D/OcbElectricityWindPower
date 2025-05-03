@@ -1,12 +1,72 @@
-<configs patcher-version="4">
-	<modif condition="UndeadLegacy_CoreModule">
-		<include path="recipes.a20.ulm.xml"/>
-	</modif>
-	<modelsif condition="DarknessFallsCore">
-    <include path="recipes.a21.df.xml"/>
-  </modelsif>
+<configs patcher-version="7">
 	<modelse>
-		<include path="recipes.a21.xml"/>
-		<include path="recipes.solar.xml"/>
+		<append xpath="/recipes">
+			<recipe name="ocbElectricityModernWindmill" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="120">
+				<ingredient name="resourceLegendaryParts" count="1"/>
+				<ingredient name="resourceScrapPolymers" count="60"/>
+				<ingredient name="resourceMechanicalParts" count="24"/>
+				<ingredient name="resourceElectricParts" count="6"/>
+				<ingredient name="resourceForgedSteel" count="30"/>
+				<effect_group>
+					<passive_effect
+						name="CraftingIngredientCount"
+						level="0,1,2,3,4"
+						operation="perc_add"
+						value=".5,.35,.25,.15,.0"
+						tags="resourceScrapPolymers,resourceMechanicalParts,resourceElectricParts,resourceForgedSteel"
+					/>
+				</effect_group>
+			</recipe>
+
+			<recipe name="ocbElectricityRusticWindmill" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="60">
+				<ingredient name="resourceMechanicalParts" count="6"/>
+				<ingredient name="resourceElectricParts" count="3"/>
+				<ingredient name="resourceScrapIron" count="20"/>
+				<ingredient name="resourceWood" count="80"/>
+				<effect_group>
+					<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.35,.25,.15,.0" tags="resourceMechanicalParts,resourceElectricParts,resourceScrapIron,resourceWood"/>
+				</effect_group>
+			</recipe>
+
+			<recipe name="ocbElectricitySmallStator" count="1" material_based="true" tags="learnable" craft_area="forge" craft_time="45">
+				<ingredient name="unit_iron" count="40"/>
+				<ingredient name="unit_brass" count="120"/>
+				<ingredient name="unit_clay" count="40"/>
+				<effect_group>
+					<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="unit_iron,unit_brass"/>
+				</effect_group>
+			</recipe>
+
+			<recipe name="ocbElectricityAlternator" count="1" material_based="true" tags="learnable" craft_area="forge" craft_time="90" craft_tool="toolForgeCrucible">
+				<ingredient name="unit_iron" count="60"/>
+				<ingredient name="unit_brass" count="180"/>
+				<ingredient name="unit_clay" count="60"/>
+				<effect_group>
+					<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="unit_iron,unit_brass"/>
+				</effect_group>
+			</recipe>
+			
+			<!-- <recipe name="solarbank" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="600"> -->
+				<!-- <ingredient name="resourceForgedIron" count="40"/> -->
+				<!-- <ingredient name="resourceElectricParts" count="60"/> -->
+				<!-- <ingredient name="resourceMechanicalParts" count="20"/> -->
+				<!-- <ingredient name="meleeToolAllSteelParts" count="6"/> -->
+				<!-- <ingredient name="gunBotRoboticsParts" count="4"/> -->
+			<!-- </recipe> -->
+
+			<!-- <recipe name="solarCell" count="1" material_based="false" tags="learnable,workbenchCrafting" craft_area="workbench" craft_time="240"> -->
+				<!-- <ingredient name="resourceAcid" count="1"/> -->
+				<!-- <ingredient name="resourceBrokenGlass" count="200"/> -->
+				<!-- <ingredient name="resourceScrapLead" count="200"/> -->
+				<!-- <ingredient name="resourceElectricParts" count="24"/> -->
+				<!-- <ingredient name="resourceMechanicalParts" count="6"/> -->
+			<!-- </recipe> -->
+
+			<!-- <recipe name="resourceBrokenGlass" count="10" material_based="true" tags="perkAdvancedEngineering" craft_tool="toolForgeCrucible" craft_area="forge" craft_time="20"> -->
+				<!-- <ingredient name="unit_glass" count="200"/> -->
+				<!-- <ingredient name="unit_stone" count="10"/> -->
+				<!-- <ingredient name="unit_clay" count="20"/> -->
+			<!-- </recipe> -->
+		</append>
 	</modelse>
 </configs>

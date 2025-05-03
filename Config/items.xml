@@ -1,4 +1,4 @@
-<configs patcher-version="4">
+<configs patcher-version="7">
 	<modif condition="UndeadLegacy_CoreModule">
 		<include path="items.a20.ulm.xml"/>
 	</modif>
@@ -9,8 +9,121 @@
     <include path="items.a21.df.xml"/>
 	</modelsif>
 	<modelse>
-		<include path="items.a21.xml"/>
-		<include path="items.solar.xml"/>
-		<include path="items.rewards.xml"/>
+		<append xpath="/items/item[@name='resourceScrapBrass']">
+			<property name="RepairAmount" value="50"/>
+			<property name="RepairTime" value="0.25"/>
+		</append>
+
+		<append xpath="/items">
+			<item name="ocbElectricitySmallStator">
+				<property name="HoldType" value="45"/>
+				<property name="Tags" value="junk"/>
+				<property name="PickupJournalEntry" value="renewableEnergyTip"/>
+				<property name="Meshfile" value="@Other/Items?Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@Other/Items?Misc/sack_droppedPrefab.prefab"/>
+				<property name="UnlockedBy" value="craftingRenewables"/>
+				<property name="RepairTools" value="resourceScrapBrass"/>
+				<property name="Material" value="MresourceScrapBrassMedium"/>
+				<property name="MeltTimePerUnit" value=".6"/>
+				<!-- stacking for items that go in slots doesn't work -->
+				<!-- otherwise full stacks are moved to the slots :-/ -->
+				<property name="DegradationBreaksAfter" value="false"/>
+				<property name="RepairExpMultiplier" value="2.5"/>
+				<property name="ShowQuality" value="true"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Weight" value="80"/>
+				<property name="EconomicValue" value="200"/>
+				<property name="Group" value="Resources"/>
+				<property name="LootExpValue" value="4"/>
+				<effect_group>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="2000,9000" tier="1,6"/>
+				</effect_group>
+			</item>
+
+			<item name="ocbElectricityAlternator">
+				<property name="HoldType" value="45"/>
+				<property name="Tags" value="junk"/>
+				<property name="PickupJournalEntry" value="renewableEnergyTip"/>
+				<property name="Meshfile" value="@Other/Items?Misc/sackPrefab.prefab"/>
+				<property name="DropMeshfile" value="@Other/Items?Misc/sack_droppedPrefab.prefab"/>
+				<property name="UnlockedBy" value="craftingRenewables"/>
+				<property name="RepairTools" value="resourceScrapBrass"/>
+				<property name="Material" value="MresourceScrapBrassMedium"/>
+				<property name="MeltTimePerUnit" value=".6"/>
+				<!-- stacking for items that go in slots doesn't work -->
+				<!-- otherwise full stacks are moved to the slots :-/ -->
+				<property name="DegradationBreaksAfter" value="false"/>
+				<property name="RepairExpMultiplier" value="2.5"/>
+				<property name="ShowQuality" value="true"/>
+				<property name="Stacknumber" value="1"/>
+				<property name="Weight" value="220"/>
+				<property name="EconomicValue" value="400"/>
+				<property name="Group" value="Resources"/>
+				<property name="LootExpValue" value="10"/>
+				<effect_group>
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="2400,11000" tier="1,6"/>
+				</effect_group>
+			</item>
+
+			<!-- *** Renewables_Skill_Magazine -->
+
+			<item name="renewablesSkillMagazine">
+				<property name="Extends" value="masterSkillMagazine"/>
+				<property name="Tags" value="renewablesCSM"/>
+				<property name="CustomIcon" value="bookRenewables"/>
+				<property name="DescriptionKey" value="renewablesSkillMagazineDesc"/>
+				<property name="PickupJournalEntry" value="renewableEnergyTip"/>
+				<property name="Unlocks" value="craftingRenewables"/>
+
+				<effect_group tiered="false">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingRenewables" level="1"/>
+					<!-- level="-1" sets a perk to max level -->
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+				</effect_group>
+			</item>
+		</append>
+		
+		
+		<append xpath="/items/item[@name='resourceCloth']">
+			<property name="RepairAmount" value="100"/>
+			<property name="RepairTime" value="0.5"/>
+		</append>
+
+		<append xpath="/items/item[@name='solarCell']">
+			<property name="UnlockedBy" value="craftingRenewables"/>
+			<property name="RepairTools" value="resourceCloth"/>
+			<property name="RepairExpMultiplier" value="2.5"/>
+		</append>
+		
+		
+		<insertafter xpath="/items/item[@name='questRewardSolarBankBundle']">
+			<item name="questRewardT1WindMillBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="bundleWindMill"/>
+				<property name="CustomIconTint" value="FFFFFF"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardT1WindMillBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="ocbElectricityRusticWindmill,ocbElectricitySmallStator,renewablesSkillMagazine"/>
+					<property name="Create_item_count" value="1,6,3"/>
+				</property>
+			</item>
+
+			<item name="questRewardT3WindMillBundle">
+				<property name="Extends" value="questRewardBundleMaster"/>
+				<property name="CreativeMode" value="Player"/>
+				<property name="CustomIcon" value="bundleWindMill"/>
+				<property name="CustomIconTint" value="FFFFFF"/>
+				<property name="ItemTypeIcon" value="bundle"/>
+				<property name="DescriptionKey" value="questRewardT3WindMillBundleDesc"/>
+				<property class="Action0">
+					<property name="Create_item" value="ocbElectricityModernWindmill,ocbElectricityAlternator,renewablesSkillMagazine"/>
+					<property name="Create_item_count" value="1,6,3"/>
+				</property>
+			</item>
+		</insertafter>
 	</modelse>
 </configs>

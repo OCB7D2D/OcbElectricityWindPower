@@ -1,4 +1,4 @@
-<configs patcher-version="4">
+<configs patcher-version="7">
 	<modif condition="DarknessFallsCore">
 		<include path="buffs.a21.df.xml"/>
 	</modif>

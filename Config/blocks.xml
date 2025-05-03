@@ -1,4 +1,4 @@
-<configs patcher-version="4">
+<configs patcher-version="7">
 	<append xpath="/blocks">
 		<append xpath="/blocks/block[@name='solarbank']">
 			<!-- Level 1 (2000 uses) in approx 4 days -->
@@ -28,7 +28,7 @@
 			<property name="CanPickup" value="true"/>
 			<property name="TakeDelay" value="30"/>
 			<property name="Material" value="Mmetal"/>
-    </block>
+		</block>
 
 		<block name="ocbElectricityRusticWindmill">
 			<property name="Shape" value="ModelEntity"/>
@@ -38,9 +38,9 @@
 			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?RusticWindmill"/>
 
 			<property name="Material" value="Mwood"/>
-      <property name="MaxDamage" value="500"/>
-      <property name="explosionresistance" value="1.25"/>
-      <property name="LPHardnessScale" value="4"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="explosionresistance" value="1.25"/>
+			<property name="LPHardnessScale" value="4"/>
 			<property name="SellableToTrader" value="true"/>
 
 			<property name="EconomicValue" value="100"/>
@@ -56,6 +56,23 @@
 			<property name="WearFactor" value="1"/>
 			<property name="SortOrder2" value="0003a"/>
 			<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
+			<property name="UnlockedBy" value="craftingRenewables"/>
+
+			<property name="Stacknumber" value="4"/>
+
+			<property class="RepairItems">
+				<property name="resourceMechanicalParts" value="3"/>
+				<property name="resourceElectricParts" value="3"/>
+				<property name="resourceScrapIron" value="20"/>
+				<property name="resourceWood" value="80"/>
+			</property>
+
+			<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="1,3" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="5,10" tag="salvageHarvest"/>
+			<drop event="Destroy" name="resourceWood" count="10,20"/>
+
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 		</block>
 
 		<block name="ocbElectricityModernWindmill">
@@ -67,9 +84,9 @@
 			<property name="Model" value="#@modfolder:Resources/Windmills.unity3d?ModernWindmill"/>
 
 			<property name="Material" value="Msteel"/>
-      <property name="MaxDamage" value="3500"/>
-      <property name="explosionresistance" value="2"/>
-      <property name="LPHardnessScale" value="8"/>
+			<property name="MaxDamage" value="3500"/>
+			<property name="explosionresistance" value="2"/>
+			<property name="LPHardnessScale" value="8"/>
 			<property name="SellableToTrader" value="true"/>
 
 			<property name="EconomicValue" value="300"/>
@@ -85,6 +102,23 @@
 			<property name="WearFactor" value="0.85"/>
 			<property name="SortOrder2" value="0003b"/>
 			<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
+			<property name="UnlockedBy" value="craftingRenewables"/>
+
+			<property name="Stacknumber" value="2"/>
+
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="12"/>
+				<property name="resourceMechanicalParts" value="12"/>
+				<property name="resourceElectricParts" value="6"/>
+				<property name="resourceForgedSteel" value="20"/>
+			</property>
+
+			<drop event="Harvest" name="resourceForgedSteel" count="6,18" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapPolymers" count="3,9" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="3,6" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="3,12" tag="salvageHarvest"/>
+
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 		</block>
 	</append>
 
@@ -119,17 +153,31 @@
 	<append xpath="/blocks/block[@name='cntFreezerMaster']">
 		<drop event="Harvest" name="ocbElectricitySmallStator" count="1" prob="0.1" tag="salvageHarvest"/>
 	</append>
-
-	<modif condition="UndeadLegacy_CoreModule">
-		<include path="blocks.a20.ulm.xml"/>
-	</modif>
-  <modelsif condition="DarknessFallsCore">
-    <include path="blocks.a21.xml"/>
-    <include path="blocks.solar.xml"/>
-    <include path="blocks.a21.df.xml"/>
-  </modelsif>
-  <modelse>
-		<include path="blocks.a21.xml"/>
-		<include path="blocks.solar.xml"/>
+	
+	<modelse>
+		<modif condition="OcbElectricityOverhaul">
+			<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
+				<property name="OutputPerStack" value="50"/>
+				<property name="MaxPower" value="200"/>
+			</append>
+			<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
+				<property name="OutputPerStack" value="100"/>
+				<property name="MaxPower" value="400"/>
+			</append>
+		</modif>
+		<modelse>
+			<append xpath="/blocks/block[@name='ocbElectricityRusticWindmill']">
+				<property name="OutputPerStack" value="75"/>
+				<property name="MaxPower" value="450"/>
+			</append>
+			<append xpath="/blocks/block[@name='ocbElectricityModernWindmill']">
+				<property name="OutputPerStack" value="125"/>
+				<property name="MaxPower" value="750"/>
+			</append>
+		</modelse>
+		
+		<!-- <append xpath="/blocks/block[@name='solarbank']"> -->
+			<!-- <property name="UnlockedBy" value="craftingRenewables"/> -->
+		<!-- </append> -->
 	</modelse>
 </configs>
